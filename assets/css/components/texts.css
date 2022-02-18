@@ -1,0 +1,50 @@
+
+.regular-text{
+    font-family: 'Fira regular';
+}
+.bold-text{
+    font-family: 'Fira bold';
+}
+.light-text{
+    font-family: 'Fira light';
+}
+.thin-text{
+    font-family: 'Fira thin';
+}
+.small-text{
+    font-size: var(--small-text);
+}
+.medium-text{
+    font-size: var(--medium-text);
+}
+.large-text{
+    font-size: var(--large-text);
+}
+.big-text{
+    font-size: var(--big-text);
+}
+.orange-text{
+    color: var(--cream-orange);
+}
+.blue-text{
+    color: var(--fun-blue);
+}
+.yellow-text{
+    color: var(--freeze-yellow);
+}
+.green-text{
+    color: var(--cute-green);
+    transition: all .2s ease-in;
+}
+.white-text{
+    color: var(--regular-white);
+}
+.black-text{
+    color: var(--dark-grey);
+    transition: all .2s ease-in;
+}
+.text-title{
+    font-size: var(--big-text);
+    font-family: 'Fira bold';
+    color: var(--dark-grey);
+}

@@ -1,0 +1,35 @@
+@import url(components/variables.css);
+@import url(components/texts.css);
+@import url(components/modifers.css);
+
+body{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 1rem;
+    font-family: 'Fira regular';
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6{
+    margin:0;
+    padding: 0;
+}
+
+ul, li, p, span{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a{
+    margin:0;
+    padding: 0;
+    outline: none;
+    text-decoration: none;
+}
+
+button{
+    border: none;
+    outline: none;
+}
