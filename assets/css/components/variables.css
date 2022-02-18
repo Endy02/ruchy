@@ -1,17 +1,15 @@
 :root{
-    --cute-green: #7DE2A7;
-    --weezy-sand: #CC9966;
-    --dark-brown: #A48A7B;
-    --cream-orange: #FF815E;
-    --fun-blue: #6BB2FF;
+    --weezy-sand: #F6AA4D;
+    --cream-orange: #F65D19;
+    --fun-blue: #22A2B3;
     --regular-white: #ffffff;
-    --dark-grey: #707070;
+    --dark-grey: #7E7C7C;
     --bottom-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
     --top-shadow: 0 -3px 6px 0 rgba(0,0,0,0.16);
     --big-text: 1.538rem;
     --large-text: 1.258rem;
-    --medium-text: .938rem;
-    --small-text: .813rem;
-    --header-height: 50px;
+    --medium-text: 1.038rem;
+    --small-text: .883rem;
+    --header-height: 60px;
     --footer-height: 110px;
 }

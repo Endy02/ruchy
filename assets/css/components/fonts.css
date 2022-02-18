@@ -1,0 +1,19 @@
+@font-face {
+    font-family: 'Fira regular';
+    src: url(../fonts/FiraSans-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Fira bold';
+    src: url(../fonts/FiraSans-Bold.ttf);
+}
+
+@font-face {
+    font-family: 'Ubuntu light';
+    src: url(../fonts/FiraSans-Light.ttf);
+}
+
+@font-face {
+    font-family: 'Fira thin';
+    src: url(../fonts/FiraSans-Thin.ttf);
+}
