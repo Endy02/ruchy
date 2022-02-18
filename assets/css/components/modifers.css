@@ -1,0 +1,65 @@
+/* commun */
+.pad-b-s{
+    padding-bottom: 10px;
+}
+.pad-b-m{
+    padding-bottom: 20px;
+}
+.pad-b-l{
+    padding-bottom: 30px;
+}
+.pad-b-xl{
+    padding-bottom: 45px;
+}
+.pad-t-s{
+    padding-top: 10px;
+}
+.pad-t-m{
+    padding-top: 20px;
+}
+.pad-t-l{
+    padding-top: 30px;
+}
+.pad-t-xl{
+    padding-top: 45px;
+}
+.pad-l-s{
+    padding-left: 10px;
+}
+.pad-l-m{
+    padding-left: 20px;
+}
+.pad-l-l{
+    padding-left: 30px;
+}
+.pad-l-xl{
+    padding-left: 45px;
+}
+.pad-r-s{
+    padding-right: 10px;
+}
+.pad-r-m{
+    padding-right: 20px;
+}
+.pad-r-l{
+    padding-right: 30px;
+}
+.pad-r-xl{
+    padding-right: 45px;
+}
+.space{
+    width: 100%;
+    height: 1px;
+    padding: 30px 0px;
+}
+.full-height{
+    height: 100%;
+}
+.full-width-gutter{
+    height: 100%;
+    width: 100%;
+    padding: 50px 0px;
+}
+.full-width{
+    width: 100%;
+}

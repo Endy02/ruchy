@@ -1,0 +1,17 @@
+:root{
+    --cute-green: #7DE2A7;
+    --weezy-sand: #CC9966;
+    --dark-brown: #A48A7B;
+    --cream-orange: #FF815E;
+    --fun-blue: #6BB2FF;
+    --regular-white: #ffffff;
+    --dark-grey: #707070;
+    --bottom-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    --top-shadow: 0 -3px 6px 0 rgba(0,0,0,0.16);
+    --big-text: 1.538rem;
+    --large-text: 1.258rem;
+    --medium-text: .938rem;
+    --small-text: .813rem;
+    --header-height: 50px;
+    --footer-height: 110px;
+}
