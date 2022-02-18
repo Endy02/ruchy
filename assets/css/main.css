@@ -1,6 +1,11 @@
+@import url(components/fonts.css);
 @import url(components/variables.css);
+@import url(components/containers.css);
 @import url(components/texts.css);
 @import url(components/modifers.css);
+@import url(components/button.css);
+
+@import url(components/navbar.css);
 
 body{
     margin:0;

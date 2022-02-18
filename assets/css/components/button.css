@@ -1,0 +1,161 @@
+.btn{
+    width: max-content;
+    font-weight: 700;
+    text-align: center;
+    font-family: 'Fira bold';
+    border: none;
+    text-decoration: none;
+    box-shadow: var(--bottom-shadow);
+    cursor: pointer;
+}
+.btn-default{
+    border-radius: 50px;
+}
+.btn-bordered{
+    border-radius: 10px;
+}
+.btn-large{
+    padding: 13px 30px;
+    font-size: var(--large-text);
+}
+.btn-medium{
+    padding: 6px 18px;
+    font-size: var(--medium-text);
+}
+.btn-small{
+    padding: 4px 15px;
+    font-size: var(--small-text);
+}
+
+.btn-current{
+    background-color: var(--fun-blue);
+    color: var(--regular-white);
+    transition: all .3s ease-out;
+}
+.btn-current:hover,
+.btn-current:focus{
+    background-color: var(--weezy-sand);
+    transition: all .3s ease-in-out;
+}
+.btn-great{
+    background-color: var(--fun-blue);
+    color: var(--regular-white);
+    transition: all .3s ease-out;
+}
+.btn-great:hover,
+.btn-great:focus{
+    background-color: var(--cream-orange);
+    transition: all .3s ease-in;
+}
+
+.btn-cream{
+    background-color: var(--cream-orange);
+    color: var(--glow-white);
+    transition: all .3s ease-out;
+}
+.btn-cream:hover,
+.btn-cream:focus{
+    background-color: var(--fun-blue);
+    transition: all .3s ease-in-out;
+}
+.basic-link{
+    font-size: var(--medium-text);
+    font-family: 'Fira light';
+    text-align: center;
+    padding: 5px 15px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+.basic-link-current{
+    color: var(--dark-grey);
+    transition: all .2s ease-out;
+}
+.basic-link-current:hover{
+    background-color: var(--fun-blue);
+    color: var(--regular-white);
+    transition: all .2s ease-in;
+}
+.basic-link-sand{
+    color: var(--dark-grey);
+    transition: all .2s ease-out;
+}
+.basic-link-sand:hover{
+    background-color: var(--weezy-sand);
+    color: var(--regular-white);
+    transition: all .2s ease-in;
+}
+.basic-link-great{
+    color: var(--dark-grey);
+    transition: all .2s ease-out;
+}
+.basic-link-great-active{
+    background-color: var(--cute-green);
+    color: var(--regular-white);
+    transition: all .2s ease-in;
+}
+.basic-link-great:hover{
+    background-color: var(--cute-green);
+    color: var(--regular-white);
+    transition: all .2s ease-in;
+}
+
+.link{
+    text-decoration: none;
+    font-size: var(--medium-text);
+    letter-spacing: .5px;
+    transition: all .2s ease-out;
+}
+.link-cream{
+    color: var(--cream-orange);
+}
+.link-cream:hover,
+.link-cream:focus{
+    color: var(--dark-grey);
+    transition: all .2s ease-in;
+}
+.link-current{
+    color: var(--fun-blue);
+}
+.link-current:hover,
+.link-current:focus{
+    color: var(--cute-green);
+    transition: all .2s ease-in;
+}
+.link-great{
+    color: var(--cute-green);
+}
+.link-great:hover,
+.link-great:focus{
+    color: var(--fun-blue);
+    transition: all .2s ease-in;
+}
+.link-agree{
+    color: var(--weezy-sand);
+}
+.link-agree:hover,
+.link-agree:focus{
+    color: var(--cute-green);
+    transition: all .2s ease-in;
+}
+.link-beaut{
+    color: var(--dark-grey);
+}
+.link-beaut:hover,
+.link-beaut:focus{
+    color: var(--cream-orange);
+    transition: all .2s ease-in;
+}
+.link-glow{
+    color: var(--regular-white);
+}
+.link-glow:hover,
+.link-glow:focus{
+    color: var(--cute-green);
+    transition: all .2s ease-in;
+}
+
+@media screen and (max-width: 960px) {
+    .btn-mobile{
+        display: none;
+    }
+}
