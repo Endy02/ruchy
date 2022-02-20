@@ -13,7 +13,7 @@ export class Home extends Component {
               <Banner/>
           </div>
           <div className='container'>
-            <h1 className='big-text bold-text black-text pad-l-m'>Statistics preview</h1>
+            <StatisticsPreview />
           </div>
           <div className='container'>
             <h1 className='big-text bold-text black-text pad-l-m'>Simulator preview</h1>
