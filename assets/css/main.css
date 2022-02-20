@@ -1,3 +1,4 @@
+/* Main style */
 @import url(components/fonts.css);
 @import url(components/variables.css);
 @import url(components/containers.css);
@@ -5,8 +6,13 @@
 @import url(components/modifers.css);
 @import url(components/button.css);
 
+/* Layer Style */
 @import url(components/navbar.css);
 @import url(components/footer.css);
+
+/* Components style */
+@import url(components/shapes.css);
+@import url(components/banner.css);
 
 body{
     margin:0;
