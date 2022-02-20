@@ -66,6 +66,33 @@
 /* Flex container modifiers */
 .flex-row-start{
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: flex-start;
+}
+.flex-row-end{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+.flex-col-center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Background modifiers */
+.bg-blue{
+    background-color: var(--fun-blue);
+    color: var(--regular-white);
+}
+.bg-orange{
+    background-color: var(--cream-orange);
+    color: var(--regular-white);
+}
+.bg-sand{
+    background-color: var(--weezy-sand);
+    color: var(--regular-white);
 }
