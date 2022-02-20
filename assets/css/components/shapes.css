@@ -1,0 +1,34 @@
+.shape-wrapper-medium{
+    width: 240px !important;
+}
+.shape-wrapper-large{
+    width: 610px !important;
+}
+.shape-bottom-left-inc{
+    position: absolute;
+    left: -250px;
+    bottom: -370px;
+}
+.shape-right-center{
+    position: absolute;
+    right: 170px;
+    top: 70px;
+}
+@media screen and (max-width: 960px) {
+    .shape-wrapper-medium{
+        width: 170px !important;
+    }
+    .shape-wrapper-large{
+        width: 410px !important;
+    }
+    .shape-bottom-left-inc{
+        position: absolute;
+        left: -230px;
+        bottom: -200px;
+    }
+    .shape-right-center{
+        position: absolute;
+        right: 10px;
+        top: 350px;
+    }
+}

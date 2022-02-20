@@ -1,0 +1,42 @@
+.banner{
+    position: relative;
+    padding-left: 250px !important  ;
+}
+.banner-infos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 130px;
+}
+.banner-title{
+    color: var(--dark-grey);
+    letter-spacing: 2px;
+    padding-bottom: 40px;
+}
+.banner-cta{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@media screen and (max-width: 960px) {
+    .banner{
+        position: relative;
+        padding: 0px 50px !important  ;
+    }
+    .banner-infos{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 70px;
+    }
+    .banner-title{
+        color: var(--dark-grey);
+        letter-spacing: 2px;
+        padding-bottom: 40px;
+    }
+    .banner-cta{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
