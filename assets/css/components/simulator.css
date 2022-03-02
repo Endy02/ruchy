@@ -1,0 +1,103 @@
+ .sim-wrapper{
+     width: 70%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+ 
+ .team-1-wrapper{
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:200px;
+    height:200px;
+    border-radius:30px;
+    overflow:hidden;
+    z-index: -2;
+ }
+ 
+ .team-1-wrapper:after {
+    content:'';
+    position:absolute;
+    top:115px !important;
+    left:115px !important;
+    border-radius:50%;
+    width:120px !important;
+    height:120px !important;
+    box-shadow:0px 0px 0px 2000px var(--cream-orange);
+ }
+
+ .team-2-wrapper{
+    position:absolute;
+    bottom:0px;
+    right:0px;
+    width:200px;
+    height:200px;
+    border-radius:30px;
+    overflow:hidden;
+    z-index: -2;
+ }
+ 
+ .team-2-wrapper:after {
+    content:'';
+    position:absolute;
+    bottom:115px;
+    right:115px;
+    border-radius:50%;
+    width:120px;
+    height:120px;
+    box-shadow:0px 0px 0px 2000px var(--fun-blue);
+ }
+.team-1-logo-wrapper{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: -40px;
+    left: -40px;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 12px solid var(--cream-orange);
+    background-color: var(--regular-white);
+    z-index: 1;
+ }
+.team-2-logo-wrapper{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: -40px;
+    right: -40px;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 12px solid var(--fun-blue);
+    background-color: var(--regular-white);
+    z-index: 1;
+ }
+ .team-logo{
+     width: 70%;
+     padding: 20px;
+ }
+ .team-2-wrapper > .team-logo-wrapper{
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    width: 20vh;
+    z-index: 1;
+ }
+ .vs-cta{
+    position:absolute;
+    left:37%;
+    top:37%;
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    background:green;
+    z-index: -1;
+ }
+
+@media screen and (max-width: 960px) {
+    
+}

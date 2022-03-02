@@ -1,15 +1,19 @@
 :root{
+    --cute-green: #A0CC83;
     --weezy-sand: #F6AA4D;
-    --cream-orange: #F65D19;
-    --fun-blue: #22A2B3;
+    --cream-orange: #f65d19;
+    --shade-cream-orange: linear-gradient(to right top, #f65d19, #e35618, #d14f17, #bf4815, #ad4114);
+    --fun-blue: rgb(34, 162, 179);
     --regular-white: #ffffff;
     --dark-grey: #7E7C7C;
     --bottom-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
     --top-shadow: 0 -3px 6px 0 rgba(0,0,0,0.16);
     --big-text: 1.538rem;
+    --trans-orange: rgba(246, 93, 25,0.6);
+    --trans-blue: rgba(34, 162, 179, 0.6);
     --large-text: 1.258rem;
     --medium-text: 1.038rem;
     --small-text: .883rem;
-    --header-height: 60px;
+    --header-height: 50px;
     --footer-height: 200px;
 }
