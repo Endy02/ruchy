@@ -21,7 +21,7 @@ const Banner = () => {
                     </div>
                 </div>
             </div>
-            <div className='shape-wrapper-large shape-bottom-left-inc'>
+            <div className='shape-wrapper-medium-l shape-bottom-left-inc'>
                 <img src='/assets/images/ball_shape_orange.svg'/>
             </div>
         </div>
