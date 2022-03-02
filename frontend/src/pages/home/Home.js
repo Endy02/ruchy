@@ -9,17 +9,17 @@ export class Home extends Component {
     return (
       <>
         <div className='wrapper-container'>
-          <div className='first-container'>
+          <div className='container'>
               <Banner/>
           </div>
           <div className='container'>
             <StatisticsPreview />
           </div>
           <div className='container'>
-            <h1 className='big-text bold-text black-text pad-l-m'>Simulator preview</h1>
+            <SimulatorPreview />
           </div>
           <div className='container'>
-            <h1 className='big-text bold-text black-text pad-l-m'>Predictions preview</h1>
+            <PredictionsPreview />
           </div>
         </div>
       </>
