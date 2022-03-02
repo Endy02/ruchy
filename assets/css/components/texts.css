@@ -43,39 +43,41 @@
     color: var(--dark-grey);
     transition: all .2s ease-in;
 }
+.center{
+    text-align: center;
+}
 .text-title{
     font-size: var(--big-text);
     font-family: 'Fira bold';
     color: var(--dark-grey);
 }
-.fu-title-right{
-    width: 180px;
-    height: 40px;
-    padding: 5px 15px;
-    letter-spacing: 2px;
+.spe-title{
+    width: 100%;
+    padding: 0;
     position: absolute;
-    top: 90px;
-    right: 0px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+    top: 10px;
+}
+.spe-left{
+    padding: 10px 50px;
     border-bottom-left-radius: 10px;
     border-top-left-radius: 10px;
-    z-index: 10;
-}
-
-.fu-title-left{
-    width: 180px;
-    height: 40px;
-    padding: 5px 15px;
     letter-spacing: 2px;
-    position: absolute;
-    top: 90px;
-    left: 0px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
+}
+.spe-right{
+    padding: 10px 50px;
     border-bottom-right-radius: 10px;
     border-top-right-radius: 10px;
-    z-index: 10;
+    letter-spacing: 2px;
+}
+.spe-bg-orange{
+    background-color: var(--cream-orange);
+}
+.spe-bg-blue{
+    background-color: var(--fun-blue);
+}
+.spe-bg-sand{
+    background-color: var(--weezy-sand);
+}
+@media screen and (max-width: 960px) {
+
 }

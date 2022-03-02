@@ -7,23 +7,46 @@
 .medium-wrapper{
     width: 50% !important;
 }
-.first-container{
+.container{
     position: relative;
     width: 100%;
     height: calc(100vh - var(--header-height));
 }
-.container{
+.r-container{
     position: relative;
-    width: 100%;
-    height: 100vh;
+    width: 350px !important;
+    height: 350px !important;    
 }
 .container-full-width{
     position: relative;
     width: 100%;
     height: 80vh;
 }
+.container-grid-2{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 0px 60px; 
+}
+.grid-item{
+    width: 100%;
+}
+.container-content{
+    width: 100%;
+}
 @media screen and (max-width: 960px) {
     .medium-wrapper{
         width: 100% !important;
+    }
+    .r-container{
+        position: relative;
+        width: 250px !important;
+        height: 250px !important;    
+    }
+    .container-grid-2{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr; 
+        gap: 60px 0px; 
     }
 }

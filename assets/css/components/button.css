@@ -38,7 +38,7 @@
     transition: all .3s ease-in-out;
 }
 .btn-great{
-    background-color: var(--fun-blue);
+    background-color: var(--weezy-sand);
     color: var(--regular-white);
     transition: all .3s ease-out;
 }
@@ -50,12 +50,22 @@
 
 .btn-cream{
     background-color: var(--cream-orange);
-    color: var(--glow-white);
+    color: var(--regular-white);
     transition: all .3s ease-out;
 }
 .btn-cream:hover,
 .btn-cream:focus{
     background-color: var(--fun-blue);
+    transition: all .3s ease-in-out;
+}
+.btn-sand{
+    background-color: var(--weezy-sand);
+    color: var(--regular-white);
+    transition: all .3s ease-out;
+}
+.btn-sand:hover,
+.btn-sand:focus{
+    background-color: var(--cream-orange);
     transition: all .3s ease-in-out;
 }
 .basic-link{

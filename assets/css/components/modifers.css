@@ -60,6 +60,10 @@
     width: 100%;
     padding: 0px 50px;
 }
+.full-gutter{
+    width: -moz-available;
+    padding: 0px 90px;
+}
 .full-width{
     width: 100%;
 }
@@ -75,6 +79,12 @@
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
+}
+.flex-row-around{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
 }
 .flex-col-center{
     display: flex;
@@ -95,4 +105,13 @@
 .bg-sand{
     background-color: var(--weezy-sand);
     color: var(--regular-white);
+}
+@media screen and (max-width: 960px) {
+    .full-gutter{
+        width: -moz-available;
+        padding: 0px 20px;
+    }
+    .mobile{
+        display: none;
+    }
 }

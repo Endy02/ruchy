@@ -1,12 +1,14 @@
 .banner{
+    height: 100%;
     position: relative;
-    padding-left: 250px !important  ;
+    padding-left: 250px !important;
 }
 .banner-infos{
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 130px;
+    text-align: center;
 }
 .banner-title{
     color: var(--dark-grey);
