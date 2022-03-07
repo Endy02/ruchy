@@ -9,6 +9,8 @@ import Simulator from './pages/simulator/Simulator'
 import Predictions from './pages/predictions/Predictions'
 import Profile from './pages/users/Profile'
 import Settings from './pages/users/Settings'
+
+
 class App extends Component {
     render() {
         return (
