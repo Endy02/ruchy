@@ -22,6 +22,11 @@
     width: 100%;
     height: 80vh;
 }
+.container-medium-width{
+    position: relative;
+    width: 100%;
+    height: 55vh;
+}
 .container-full{
     position: relative;
     width: 100%;
