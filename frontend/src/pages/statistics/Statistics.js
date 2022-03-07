@@ -10,8 +10,16 @@ const Statistics = () => {
       <div className='container'>
         <div className='container-full-width flex-col-center full-height' >
           <div className='container-full'>
-            <div className=''>
-              
+            <div className='container-medium-width'>
+              <div className='container-grid-2 full-height'>
+                <div className='full-gutter'>
+                  <div className='container-content flex-col-center full-height'>
+                    <h1 className='big-text black-text bold-text pad-t-l'>Consult games statistics and stay up to date with the NBA games.</h1>
+                  </div>
+                </div>
+                <div className='back-ground rectangle-cut-left'>
+                </div>
+              </div>
             </div>
             <div className='container-bottom flex-col-center'>
               <TeamPrev />
