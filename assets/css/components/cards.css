@@ -147,6 +147,17 @@
 .fu-card-table-line{
     height: 7vh;
 }
+.rank-card{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    box-shadow: var(--bottom-shadow);
+    padding: 5px 15px;
+    background-color: var(--weezy-sand);
+}   
 
 @media screen and (max-width: 960px) {
     .card-cover{
@@ -157,6 +168,9 @@
     }
     .fu-card-wrapper{
         width: 100%;
+    }
+    .card-logo-big{
+        width: 60px;
     }
 }
 

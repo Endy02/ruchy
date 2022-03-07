@@ -106,6 +106,20 @@
     background-color: var(--weezy-sand);
     color: var(--regular-white);
 }
+.stats-date{
+    width: 100%;
+}
+.stats-info{
+    width: -moz-available;
+    padding: 0px 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.today-details{
+    width: 100%;
+}
 @media screen and (max-width: 960px) {
     .full-gutter{
         width: -moz-available;
