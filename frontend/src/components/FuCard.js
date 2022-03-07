@@ -28,50 +28,52 @@ const FuCard = () => {
         </div>
         <div className='fu-card-desc pad-t-m'>
           <table className='fu-card-table'>
-            <tr className='fu-card-table-line'>
-              <td className='fu-card-table-cell'>
-                <p className='medium-text regular-text'>78 %</p>
-              </td>
-              <td className='fu-card-table-cell'>
-                <p className='medium-text regular-text'>Free throw</p>
-              </td>
-              <td className='fu-card-table-cell'>
-                <p className='medium-text regular-text'>22 %</p>
-              </td>
-            </tr>
-            <tr className='fu-card-table-line'>
-              <td className='fu-card-table-cell'>
-                <p className='medium-text regular-text'>78 %</p>
-              </td>
-              <td className='fu-card-table-cell'>
-                <p className='medium-text regular-text'>Assist</p>
-              </td>
-              <td className='fu-card-table-cell'>
-                <p className='medium-text regular-text'>22 %</p>
-              </td>
-            </tr>
-            <tr className='fu-card-table-line'>
-              <td className='fu-card-table-cell'>
-                <p className='medium-text regular-text'>78 %</p>
-              </td>
-              <td className='fu-card-table-cell'>
-                <p className='medium-text regular-text'>Field goal</p>
-              </td>
-              <td className='fu-card-table-cell'>
-                <p className='medium-text regular-text'>22 %</p>
-              </td>
-            </tr>
-            <tr className='fu-card-table-line'>
-              <td className='fu-card-table-cell'>
-                <p className='medium-text regular-text'>78 %</p>
-              </td>
-              <td className='fu-card-table-cell'>
-                <p className='medium-text regular-text'>Rebonds</p>
-              </td>
-              <td className='fu-card-table-cell'>
-                <p className='medium-text regular-text'>22 %</p>
-              </td>
-            </tr>
+            <tbody>
+              <tr className='fu-card-table-line'>
+                <td className='fu-card-table-cell'>
+                  <p className='medium-text regular-text'>78 %</p>
+                </td>
+                <td className='fu-card-table-cell'>
+                  <p className='medium-text regular-text'>Free throw</p>
+                </td>
+                <td className='fu-card-table-cell'>
+                  <p className='medium-text regular-text'>22 %</p>
+                </td>
+              </tr>
+              <tr className='fu-card-table-line'>
+                <td className='fu-card-table-cell'>
+                  <p className='medium-text regular-text'>78 %</p>
+                </td>
+                <td className='fu-card-table-cell'>
+                  <p className='medium-text regular-text'>Assist</p>
+                </td>
+                <td className='fu-card-table-cell'>
+                  <p className='medium-text regular-text'>22 %</p>
+                </td>
+              </tr>
+              <tr className='fu-card-table-line'>
+                <td className='fu-card-table-cell'>
+                  <p className='medium-text regular-text'>78 %</p>
+                </td>
+                <td className='fu-card-table-cell'>
+                  <p className='medium-text regular-text'>Field goal</p>
+                </td>
+                <td className='fu-card-table-cell'>
+                  <p className='medium-text regular-text'>22 %</p>
+                </td>
+              </tr>
+              <tr className='fu-card-table-line'>
+                <td className='fu-card-table-cell'>
+                  <p className='medium-text regular-text'>78 %</p>
+                </td>
+                <td className='fu-card-table-cell'>
+                  <p className='medium-text regular-text'>Rebonds</p>
+                </td>
+                <td className='fu-card-table-cell'>
+                  <p className='medium-text regular-text'>22 %</p>
+                </td>
+              </tr>
+            </tbody>
           </table>
         </div>
       </div>
