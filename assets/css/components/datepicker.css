@@ -23,13 +23,8 @@
     box-shadow: var(--bottom-shadow);
     padding: 5px;
     fill: var(--regular-white);
-    background-color: var(--fun-blue);
     cursor: pointer;
     transition: all .2s ease-out;
-}
-.date-icon:hover, .date-icon:focus{
-    background-color: var(--weezy-sand);
-    transition: all .2s ease-in;
 }
 .date-icon svg{
     width: 100%;
@@ -45,4 +40,32 @@
     border-radius: 10px;
     padding: 5px 15px;
     cursor: pointer;
+}
+.picker-blue{
+    background-color: var(--fun-blue);
+}
+.picker-blue:hover,
+.picker-blue:focus{
+    background-color: var(--weezy-sand);
+}
+.picker-orange{
+    background-color: var(--cream-orange);
+}
+.picker-orange:hover,
+.picker-orange:focus{
+    background-color: var(--fun-blue);
+}
+.picker-sand{
+    background-color: var(--weezy-sand);
+}
+.picker-sand:hover,
+.picker-sand:focus{
+    background-color: var(--cream-orange);
+}
+.picker-green{
+    background-color: var(--cute-green);
+}
+.picker-green:hover,
+.picker-green:focus{
+    background-color: var(--fun-blue);
 }
