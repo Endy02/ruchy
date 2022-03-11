@@ -10,7 +10,7 @@ const Cards = ({ team_1, team_2, team_1_score, team_2_score, team_win, link }) =
           <div className={team_1 == team_win ? 'card-right card-bg-win' : 'card-right'}>
             <div className='card-header'>
               <div className='card-logo'>
-                <img className='card-img-logo' src={"/assets/images/teams/" + team_1 + ".png"} />
+                <img className='card-img-logo' src={`/assets/images/teams/${team_1}.svg`} />
               </div>
             </div>
             <div className='card-content-right'>
@@ -20,7 +20,7 @@ const Cards = ({ team_1, team_2, team_1_score, team_2_score, team_win, link }) =
           <div className={team_2 == team_win ? 'card-left card-bg-win' : 'card-left'}>
             <div className='card-header'>
               <div className='card-logo'>
-                <img className='card-img-logo' src={"/assets/images/teams/" + team_2 + ".png"} />
+                <img className='card-img-logo' src={`/assets/images/teams/${team_2}.svg`} />
               </div>
             </div>
             <div className='card-content-left'>
@@ -38,7 +38,7 @@ const Cards = ({ team_1, team_2, team_1_score, team_2_score, team_win, link }) =
         <div className={team_1 == team_win ? 'card-right card-bg-win' : 'card-right'}>
           <div className='card-header'>
             <div className='card-logo'>
-              <img className='card-img-logo' src={"/assets/images/teams/" + team_1 + ".png"} />
+              <img className='card-img-logo' src={`/assets/images/teams/${team_1}.svg`} />
             </div>
           </div>
           <div className='card-content-right'>
@@ -48,7 +48,7 @@ const Cards = ({ team_1, team_2, team_1_score, team_2_score, team_win, link }) =
         <div className={team_2 == team_win ? 'card-left card-bg-win' : 'card-left'}>
           <div className='card-header'>
             <div className='card-logo'>
-              <img className='card-img-logo' src={"/assets/images/teams/" + team_2 + ".png"} />
+              <img className='card-img-logo' src={`/assets/images/teams/${team_2}.svg`} />
             </div>
           </div>
           <div className='card-content-left'>

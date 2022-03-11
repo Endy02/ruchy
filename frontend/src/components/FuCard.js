@@ -1,28 +1,33 @@
 import React from 'react'
 
-const FuCard = () => {
+const COLORS = ['fu-orange','fu-blue','fu-sand','fu-green','fu-grey']
+
+const FuCard = ({color, homeTeam, awayTeam, data}) => {
+  
+  const checkColor = COLORS.includes(color) ? color : COLORS[3]
+
   return (
     <>
       <div className='fu-card-wrapper pad-b-l'>
         <div className='fu-card'>
-          <div className='fu-card-left fu-card-win-left'>
+          <div className={`fu-card-left fu-card-win-left ${checkColor}`}>
             <div className='fu-card-img'>
               <div className='card-logo-large'>
-                <img className='card-img-logo' src="/assets/images/teams/chicago-bulls.png" />
+                <img className='card-img-logo' src={homeTeam.url}/>
               </div>
             </div>
             <div className='fu-card-content'>
-              <p className='large-text bold-text pad-l-s'>85 %</p>
+              <p className='large-text bold-text pad-l-m'>85 %</p>
             </div>
           </div>
           <div className='fu-card-right'>
             <div className='fu-card-img'>
               <div className='card-logo-large'>
-                <img className='card-img-logo' src="/assets/images/teams/boston-celtics.png" />
+                <img className='card-img-logo' src={awayTeam.url} />
               </div>
             </div>
             <div className='fu-card-content'>
-              <p className='large-text bold-text pad-r-s'>15 %</p>
+              <p className='large-text bold-text pad-r-m'>15 %</p>
             </div>
           </div>
         </div>
