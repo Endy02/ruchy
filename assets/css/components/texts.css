@@ -75,6 +75,9 @@
 .spe-bg-blue{
     background-color: var(--fun-blue);
 }
+.spe-bg-green{
+    background-color: var(--cute-green);
+}
 .spe-bg-sand{
     background-color: var(--weezy-sand);
 }

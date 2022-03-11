@@ -103,6 +103,11 @@
     background-size: cover;
     filter: brightness(1.4);
 }
+.back-ground-2{
+    background-image: url(../../images/playground_background_2.jpg);
+    background-size: cover;
+    filter: brightness(1.4);
+}
 /* Background modifiers */
 .bg-blue{
     background-color: var(--fun-blue);
@@ -128,6 +133,16 @@
     justify-content: center;
 }
 .today-details{
+    width: 100%;
+}
+.logo-big{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    fill: var(--cream-orange);
+}
+.fu-charts{
     width: 100%;
 }
 @media screen and (max-width: 960px) {

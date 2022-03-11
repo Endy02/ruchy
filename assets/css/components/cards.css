@@ -54,6 +54,7 @@
     overflow: hidden;
 }
 .card-bg-win{
+    height: 60px;
     color: var(--regular-white);
     background-color: var(--fun-blue);
 }
@@ -62,12 +63,17 @@
 }
 .card-logo-large{
     width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .card-logo-big{
     width: 90px;
 }
 .card-img-logo{
     width: 100%;
+    height: 100%;
 }
 .card-list-date{
     color: var(--dark-grey);
@@ -123,13 +129,28 @@
 }
 .fu-card-win-right{
     clip-path: polygon(9% 0, 100% 0%, 100% 100%, 0% 100%);
-    background-color: var(--cute-green);
     color: var(--regular-white);
+    padding: 18px;
 }
 .fu-card-win-left{
     clip-path: polygon(0 0, 91% 0, 100% 100%, 0% 100%);
-    background-color: var(--cute-green);
     color: var(--regular-white);
+    padding: 18px;
+}
+.fu-orange{
+    background-color: var(--cream-orange);
+}
+.fu-blue{
+    background-color: var(--fun-blue);
+}
+.fu-sand{
+    background-color: var(--weezy-sand);
+}
+.fu-green{
+    background-color: var(--cute-green);
+}
+.fu-grey{
+    background-color: var(--dark-grey);
 }
 .fu-card-desc{
     width: 80%;
@@ -149,15 +170,19 @@
 }
 .rank-card{
     width: 80%;
+    height: 6rem;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     border-radius: 10px;
     box-shadow: var(--bottom-shadow);
     padding: 5px 15px;
     background-color: var(--weezy-sand);
-}   
+}
+.rank-card-logo{
+    width: 60px;
+}
 
 @media screen and (max-width: 960px) {
     .card-cover{
