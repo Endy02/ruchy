@@ -1,5 +1,5 @@
 import React, {useState, useRef, useEffect} from 'react'
-import TeamImages from '../../core/TeamImages'
+import teams from '../../core/Teams'
 import { motion } from 'framer-motion'
 
 const TeamPrev = () => {
@@ -15,11 +15,11 @@ const TeamPrev = () => {
             <div className='team-slider'>
                 <motion.div ref={slider} className='slider' whileTap={{cursor: 'grabbing'}}>
                     <motion.div drag='x' dragConstraints={{right:0, left: -width}} className='inner-slider'>
-                        {TeamImages.map((team, i) =>{
+                        {teams.map((team, i) =>{
                             return(
                                 <div key={i}>
                                     <motion.div className='slider-item'>
-                                        <img src={team} alt=""/>
+                                        <img src={team.url} alt=""/>
                                     </motion.div>
                                 </div>
                             );
