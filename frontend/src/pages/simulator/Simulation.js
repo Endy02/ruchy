@@ -1,9 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import FuCard from '../../components/FuCard'
 
-const Simulation = () => {
+const Simulation = ({homeTeam, awayTeam}) => {
+
+  useEffect(() => {
+    console.log(`${homeTeam.name} vs ${awayTeam.name}`)
+  }, [])
+
   return (
     <>
-        <h1 className='big-text bold-text black-text pad-l-m'>Simulatior detail</h1>
+      <div className='full-width'>
+        <div className='flex-col-center'>
+          <FuCard color={'fu-orange'} homeTeam={homeTeam} awayTeam={awayTeam} />
+        </div>
+      </div>
     </>
   )
 }

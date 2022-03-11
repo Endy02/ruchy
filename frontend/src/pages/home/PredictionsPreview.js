@@ -3,6 +3,15 @@ import Button from '../../components/Button'
 import FuCard from '../../components/FuCard'
 
 const PredictionsPreview = () => {
+  const homeTeam = {
+      'name':'chicago-bulls',
+      'url': '/assets/images/teams/chicago-bulls.svg'
+  }
+
+  const awayTeam = {
+    'name':'boston-celtics',
+    'url': '/assets/images/teams/boston-celtics.svg'
+  }
   return (
     <>
       <div className='container-full-width flex-col-center full-height'>
@@ -13,7 +22,7 @@ const PredictionsPreview = () => {
           <div className='container-grid-2'>
             <div className='grid-item flex-col-center'>
               <div className='container-content flex-col-center'>
-                <FuCard />
+                <FuCard color={'fu-sand'} homeTeam={homeTeam} awayTeam={awayTeam}/>
                 <Button buttonSize="btn-large" mode="btn-regular" buttonStyle='btn-sand' link='/statistics'>See more</Button>
               </div>
             </div>

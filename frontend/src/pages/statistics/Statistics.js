@@ -37,7 +37,7 @@ const Statistics = () => {
                     <div className='card-list'>
                       <Cards team_1='chicago-bulls' team_2='boston-celtics' team_1_score="129" team_2_score='112' team_win='chicago-bulls' link={'/statistics/'+ 1}/>
                       <Cards team_1='new-york-knicks' team_2='los-angeles-lakers' team_1_score='106' team_2_score='114' team_win='los-angeles-lakers' link={'/statistics/'+ 2}/>
-                      <Cards team_1='golden-state' team_2='san-antonio-spurs' team_1_score="130" team_2_score='128' team_win='golden-state' link={'/statistics/'+ 3}/>
+                      <Cards team_1='golden-state-warriors' team_2='san-antonio-spurs' team_1_score="130" team_2_score='128' team_win='golden-state-warriors' link={'/statistics/'+ 3}/>
                       <Cards team_1='portland-trail-blazers' team_2='minnesota-timberwolves' team_1_score="120" team_2_score='90' team_win='portland-trail-blazers' link={'/statistics/'+ 4}/>
                     </div>
                   </div>
@@ -66,28 +66,28 @@ const Statistics = () => {
           <div className='full-gutter'>
             <div className='container-grid-4'>
               <div className='grid-item'>
-                <RankCard title="Points" team="los-angeles-lakers" score="112"/>
+                <RankCard title="Points" team="philadelphia-76ers" score="112"/>
               </div>
               <div className='grid-item'>
-                <RankCard title="3 Points" team="golden-state" score="67"/>
+                <RankCard title="3 Points" team="golden-state-warriors" score="67"/>
               </div>
               <div className='grid-item'>
-                <RankCard title="Rebonds" team="chicago-bulls" score="34"/>
+                <RankCard title="Rebonds" team="utah-jazz" score="34"/>
               </div>
               <div className='grid-item'>
-                <RankCard title="Assists" team="boston-celtics" score="23"/>
+                <RankCard title="Assists" team="los-angeles-lakers" score="23"/>
               </div>
               <div className='grid-item'>
-                <RankCard title="Free Throws" team="san-antonio-spurs" score="150"/>
+                <RankCard title="Free Throws" team="phoenix-suns" score="150"/>
               </div>
               <div className='grid-item'>
                 <RankCard title="Steals" team="portland-trail-blazers" score="48"/>
               </div>
               <div className='grid-item'>
-                <RankCard title="Blocks" team="new-york-knicks" score="21"/>
+                <RankCard title="Blocks" team="brooklyn-nets" score="21"/>
               </div>
               <div className='grid-item'>
-                <RankCard title="Turnover" team="new-york-knicks" score="73"/>
+                <RankCard title="Turnover" team="detroit-pistons" score="73"/>
               </div>              
             </div>
           </div>
