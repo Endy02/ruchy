@@ -37,7 +37,7 @@ const Navbar = () => {
                 <div className="nav-content">
                     <div className={click ? "nav-list active" : "nav-list"}>
                         <div className='nav-content-header'>
-                            {button && <Button buttonSize="btn-medium" mode="btn-regular" buttonStyle='btn-current' link='/configurator'>Sign-in</Button>}
+                            {button && <Button buttonSize="btn-medium" mode="btn-regular" buttonStyle='btn-current' link='/register'>Sign-in</Button>}
                         </div>
                         <ul className='nav-item-list'>
                             <li className="nav-item">

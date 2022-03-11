@@ -1,8 +1,13 @@
 import React from 'react'
 
-const Login = () => {
+const Login = ({token}) => {
   return (
-    <div>Login</div>
+    <div>
+      <h1 className='big-text black-text bold-text'>Login</h1>
+      <button onClick={() => token('sda')}>Valider</button>
+
+
+    </div>
   )
 }
 
