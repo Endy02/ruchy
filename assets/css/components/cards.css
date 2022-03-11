@@ -56,7 +56,18 @@
 .card-bg-win{
     height: 60px;
     color: var(--regular-white);
+}
+.card-blue{
     background-color: var(--fun-blue);
+}
+.card-orange{
+    background-color: var(--cream-orange);
+}
+.card-grenn{
+    background-color: var(--cute-green);
+}
+.card-sand{
+    background-color: var(--weezy-sand);
 }
 .card-logo{
     width: 50px;

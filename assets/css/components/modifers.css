@@ -108,6 +108,11 @@
     background-size: cover;
     filter: brightness(1.4);
 }
+.back-ground-3{
+    background-image: url(../../images/jordan-shoes.jpg);
+    background-size: cover;
+    filter: brightness(1.3);
+}
 /* Background modifiers */
 .bg-blue{
     background-color: var(--fun-blue);
