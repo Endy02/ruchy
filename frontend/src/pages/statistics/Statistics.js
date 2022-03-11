@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import DatePicker from '../../components/DatePicker'
 import Cards from '../../components/Cards'
-import RankCard from '../../components/RankCard'
 import TeamPrev from './TeamPrev'
 
 const Statistics = () => {
@@ -45,7 +44,7 @@ const Statistics = () => {
               </div>
               <div className='grid-item flex-col-center grid-first'>
                 <div className='stats-date'>
-                  <DatePicker />
+                  <DatePicker color="picker-blue"/>
                 </div>
                 <div className='today-details pad-t-m'>
                   <div className='stats-info'>
@@ -54,41 +53,6 @@ const Statistics = () => {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className='container'>
-        <div className='container-full-width flex-col-center full-height'>
-          <div className='spe-title flex-row-start'>
-            <h2 className='spe-right spe-bg-sand large-text bold-text white-text'>Ranking</h2>
-          </div>
-          <div className='full-gutter'>
-            <div className='container-grid-4'>
-              <div className='grid-item'>
-                <RankCard title="Points" team="philadelphia-76ers" score="112"/>
-              </div>
-              <div className='grid-item'>
-                <RankCard title="3 Points" team="golden-state-warriors" score="67"/>
-              </div>
-              <div className='grid-item'>
-                <RankCard title="Rebonds" team="utah-jazz" score="34"/>
-              </div>
-              <div className='grid-item'>
-                <RankCard title="Assists" team="los-angeles-lakers" score="23"/>
-              </div>
-              <div className='grid-item'>
-                <RankCard title="Free Throws" team="phoenix-suns" score="150"/>
-              </div>
-              <div className='grid-item'>
-                <RankCard title="Steals" team="portland-trail-blazers" score="48"/>
-              </div>
-              <div className='grid-item'>
-                <RankCard title="Blocks" team="brooklyn-nets" score="21"/>
-              </div>
-              <div className='grid-item'>
-                <RankCard title="Turnover" team="detroit-pistons" score="73"/>
-              </div>              
             </div>
           </div>
         </div>

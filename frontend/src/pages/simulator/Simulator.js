@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Simulation from './Simulation'
 import GameSimulator from '../../components/GameSimulator'
-import Cards from '../../components/Cards'
-import Button from '../../components/Button'
-import FuCharts from '../../components/FuCharts'
+import RankCard from '../../components/RankCard'
 
 const Simulator = () => {
     const [homeTeam, setHomeTeam] = useState({})
@@ -65,19 +63,33 @@ const Simulator = () => {
             <div className='container'>
                 <div className='container-full-width flex-col-center full-height'>
                     <div className='spe-title flex-row-start'>
-                        <h2 className='spe-right spe-bg-green large-text bold-text white-text'>Analyzis</h2>
+                        <h2 className='spe-right spe-bg-sand large-text bold-text white-text'>Ranking</h2>
                     </div>
                     <div className='full-gutter'>
-                        <div className='container-grid-2'>
-                            <div className='grid-item flex-col-center'>
-                                <div className='container-content flex-col-center'>
-                                    <FuCharts />
-                                </div>
+                        <div className='container-grid-4'>
+                            <div className='grid-item'>
+                                <RankCard title="Points" team="philadelphia-76ers" score="112" />
                             </div>
-                            <div className='grid-item flex-col-center mobile'>
-                                <div className='container-content flex-col-center'>
-                                    <FuCharts />
-                                </div>
+                            <div className='grid-item'>
+                                <RankCard title="3 Points" team="golden-state-warriors" score="67" />
+                            </div>
+                            <div className='grid-item'>
+                                <RankCard title="Rebonds" team="utah-jazz" score="34" />
+                            </div>
+                            <div className='grid-item'>
+                                <RankCard title="Assists" team="los-angeles-lakers" score="23" />
+                            </div>
+                            <div className='grid-item'>
+                                <RankCard title="Free Throws" team="phoenix-suns" score="150" />
+                            </div>
+                            <div className='grid-item'>
+                                <RankCard title="Steals" team="portland-trail-blazers" score="48" />
+                            </div>
+                            <div className='grid-item'>
+                                <RankCard title="Blocks" team="brooklyn-nets" score="21" />
+                            </div>
+                            <div className='grid-item'>
+                                <RankCard title="Turnover" team="detroit-pistons" score="73" />
                             </div>
                         </div>
                     </div>
