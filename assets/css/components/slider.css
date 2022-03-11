@@ -8,10 +8,12 @@
 }
 .inner-slider{
     display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 .slider-item{
-    min-width: 10rem;
-    padding: 40px;
+    min-width: 6rem;
+    padding: 30px;
 }
 .slider-item img{
     width: 100%;

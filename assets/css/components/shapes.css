@@ -87,4 +87,11 @@
         background-color: var(--dark-grey);
         clip-path: polygon(26% 0, 100% 0, 100% 100%, 0% 100%);
     }
+
+    .rectangle-cut-right{
+        width: 100%;
+        height: 45vh;
+        background-color: var(--dark-grey);
+        clip-path: polygon(0% 0, 74% 0, 100% 100%, 0% 100%);
+    }
 }
