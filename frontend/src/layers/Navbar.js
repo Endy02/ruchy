@@ -1,10 +1,20 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import Button from '../components/Button'
 
 const Navbar = () => {
     const [click, setClick] = useState(false)
     const [button, setButton] = useState(true)
+    const [isAuth, setIsAuth] = useState(false)
+
+
+    useEffect(() => {
+        if(localStorage.getItem('access_token')){
+            setIsAuth(true)
+        }else{
+            setIsAuth(false)
+        }
+    }, [])
 
     const handleClick = () => setClick(!click);
 
@@ -37,7 +47,15 @@ const Navbar = () => {
                 <div className="nav-content">
                     <div className={click ? "nav-list active" : "nav-list"}>
                         <div className='nav-content-header'>
-                            {button && <Button buttonSize="btn-medium" mode="btn-regular" buttonStyle='btn-current' link='/register'>Sign-in</Button>}
+                            {isAuth ? (
+                                <>
+                                    {button && <Button buttonSize="btn-medium" mode="btn-regular" buttonStyle='btn-great' link='/logout'>Logout</Button>}
+                                </>
+                            ) : (
+                                <>
+                                    {button && <Button buttonSize="btn-medium" mode="btn-regular" buttonStyle='btn-current' link='/login'>Sign in</Button>}
+                                </>
+                            )}
                         </div>
                         <ul className='nav-item-list'>
                             <li className="nav-item">
