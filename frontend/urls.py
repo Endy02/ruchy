@@ -15,10 +15,12 @@ urlpatterns = [
     
     # Authentication views
     path('login', views.index, name='login'),
+    path('logout', views.index, name='login'),
     path('register', views.index, name='register'),
     path('forgot-password', views.index, name='forgot-password'),
-    path('confirm-reset-pasword', views.index, name='confirm-reset-password'),
-    path('reset-password', views.index, name='reset-password'),
+    path('activate/<uidb64>/<token>', views.index, name='activate'),
+    path('confirm-reset/<uidb64>/<token>', views.index, name='confirm-reset-password'),
+    path('reset-password/<uidb64>/<token>', views.index, name='reset-password'),
     
     # User views
     path('profile', views.index, name='profile'),

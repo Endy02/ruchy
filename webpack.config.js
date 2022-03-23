@@ -1,11 +1,17 @@
 const path = require("path");
 const webpack = require("webpack");
 
+
 module.exports = {
   entry: "./frontend/src/App.js",
   output: {
     path: path.resolve(__dirname, "./assets/js"),
     filename: "[name].js",
+  },
+  resolve: {
+    fallback: {
+        "fs": false
+    },
   },
   module: {
     rules: [
@@ -50,6 +56,9 @@ module.exports = {
         // This has effect on the react lib size
         NODE_ENV: JSON.stringify("development"),
       },
+    }),
+    new webpack.ProvidePlugin({
+      process: 'process/browser',
     }),
   ],
 };

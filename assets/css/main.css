@@ -19,6 +19,7 @@
 @import url(components/slider.css);
 @import url(components/datepicker.css);
 @import url(components/modals.css);
+@import url(components/forms.css);
 
 body{
     margin:0;
