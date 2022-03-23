@@ -15,7 +15,7 @@ def validate_image(image):
 class UserManager(BaseUserManager):
     def create_user(self, email, username, password=None):
         if not email:
-            raise ValueError("An email is required to register")
+            raise ValueError("A valid email is required to register")
         if not username:
             raise ValueError("A username is required to register")
         if not password:
@@ -57,7 +57,7 @@ class User(AbstractUser, PermissionsMixin):
     uuid = models.UUIDField(default=uuid.uuid4, editable=False)
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['username']
+    REQUIRED_FIELDS = ['username',]
 
     objects = UserManager()
 
