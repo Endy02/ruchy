@@ -168,6 +168,22 @@
     height: 100%;
     background-color: var(--cute-green);
 }
+.checked{
+    color: var(--cream-orange);
+}
+.star-icon{
+    width: 65vh;
+}
+.icon{
+    width: 3vh;
+    fill: var(--cream-orange);
+    cursor: pointer;
+    transition: all .2s ease-out;
+}
+.icon:hover, .icon:focus{
+    fill: var(--fun-blue);
+    transition: all .2s ease-in;
+}
 
 @media screen and (max-width: 960px) {
     .full-gutter{
