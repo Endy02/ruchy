@@ -8,7 +8,6 @@ import Statistics from './pages/statistics/Statistics'
 import Simulator from './pages/simulator/Simulator'
 import Predictions from './pages/predictions/Predictions'
 import Profile from './pages/users/Profile'
-import Settings from './pages/users/Settings'
 import StatisticDetails from './pages/statistics/StatisticDetails'
 import PredictionsDetail from './pages/predictions/PredictonsDetail'
 import Login from './pages/users/Login'
@@ -43,7 +42,6 @@ const App = () => {
                     <Route exact path="/predictions" element={<Predictions />} />
                     <Route exact path="/prediction/:slug" element={<PredictionsDetail />} />
                     <Route exact path="/profile" element={<Profile />} />
-                    <Route exact path="/settings" element={<Settings />} />
                     <Route exact path="/activate/:uidb64/:token" element={<Activate />} />
                     <Route exact path="/confirm-reset/:uidb64/:token" element={<ConfirmReset />} />
                     <Route exact path="/reset-password/:uidb64/:token" element={<ResetPassword />} />
