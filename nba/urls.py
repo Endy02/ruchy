@@ -2,8 +2,7 @@ from django.urls import path
 
 # API Serializers
 from .api.dashboard import ExportGamesAPI, ExportPlayersAPI, ExportTeamsAPI, ExportRankingAPI
-from .api.game import (GameAPI, GameCreateAPI, GameDeleteAPI, GameListAPI,
-                       GameUpdateAPI)
+from .api.game import (GameAPI, GameListAPI)
 from .api.gameDetail import (GameDetailAPI, GameDetailCreateAPI,
                              GameDetailDeleteAPI, GameDetailListAPI,
                              GameDetailUpdateAPI)
@@ -36,15 +35,15 @@ urlpatterns = [
 
     # Team Urls
     path('teams/', TeamListAPI.as_view(), name="all-teams"),
-    path('team/<uuid>/', TeamAPI.as_view(), name="team-detail"),
+    path('teams/<uuid>/', TeamAPI.as_view(), name="team-detail"),
     
     # Player Urls
     path('players/', PlayerListAPI.as_view(), name="all-players"),
-    path('player/<uuid>/', PlayerAPI.as_view(), name="player-detail"),
+    path('players/<uuid>/', PlayerAPI.as_view(), name="player-detail"),
     
     # Season Urls
     path('seasons/', SeasonListAPI.as_view(), name="all-season"),
-    path('season/<uuid>/', SeasonAPI.as_view(), name="seaon-detail"),
+    path('seasons/<uuid>/', SeasonAPI.as_view(), name="seaon-detail"),
     
     # Ranking Urls
     # TODO all rankings urls
@@ -53,8 +52,8 @@ urlpatterns = [
     # path('ranking/<uuid>/teams/', TeamRankingAPI.as_view(), name="team-ranking"),
     # path('ranking/<uuid>/team/<uuid>', TeamRankingAPI.as_view(), name="team-ranking"),
     # path('ranking/<uuid>/team/<uuid>', TeamRankingAPI.as_view(), name="team-ranking"),
-    path('ranks/', RankingListAPI.as_view(), name="all-ranks"),
-    path('ranking/<uuid>/', RankingAPI.as_view(), name="ranking-detail"),
+    path('rankings/', RankingListAPI.as_view(), name="all-ranks"),
+    path('rankings/<uuid>/', RankingAPI.as_view(), name="ranking-detail"),
     
     
 ]

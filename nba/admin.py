@@ -24,7 +24,7 @@ class GameAdmin(admin.ModelAdmin):
     search_fields = ('est_date', 'season')
     list_filter = ('est_date', 'season')
     list_display = ('game_id', 'est_date', 'game_status', 'season', 'home_team', 'pts_home', 'fg_pct_home', 'ft_pct_home', 'fg3_pct_home', 'ast_home', 'reb_home', 'away_team', 'pts_away', 'fg_pct_away', 'ft_pct_away', 'fg3_pct_away', 'ast_away', 'reb_away', 'home_team_win')
-    ordering = ('-season',)
+    ordering = ('-est_date',)
 
 
 @admin.register(GameDetail)

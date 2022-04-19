@@ -80,10 +80,17 @@ class ExportGamesAPI(APIView):
     def post(self, request):
         games = Games(url=settings.DATASET_URL)
         games.new_games()
+        mapper = GameMapper()
+        result = mapper.import_games()
         context = {}
-        context = {
+        if result:
+            context = {
             "Status" : "Success !"
-        }   
+            }
+        else:
+            context = {
+                "Status" : "Error !"
+            }
         return Response(status=status.HTTP_200_OK, data=context)
     
     
@@ -104,5 +111,5 @@ class ExportRankingAPI(APIView):
         else:
             context = {
                 "Status" : "Error !"
-            }    
+            }
         return Response(status=status.HTTP_200_OK, data=context)
