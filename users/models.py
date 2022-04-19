@@ -48,6 +48,7 @@ class User(AbstractUser, PermissionsMixin):
     email = models.EmailField(verbose_name="email", max_length=60, unique=True)
     username = models.CharField(max_length=50, unique=True)
     picture = models.ImageField(upload_to='user/profile/', null=True, blank=True, validators=[validate_image])
+    banner = models.ImageField(upload_to='user/profile/banner/', null=True, blank=True, validators=[validate_image])
     date_joined = models.DateTimeField(auto_now_add=True)
     last_login = models.DateTimeField(auto_now=True)
     email_verified = models.BooleanField(default=False)

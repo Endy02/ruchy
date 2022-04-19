@@ -1,35 +1,48 @@
-from rest_framework.generics import ListAPIView, RetrieveAPIView, CreateAPIView, UpdateAPIView, DestroyAPIView
-from rest_framework.response import Response
+from django.contrib.sites.shortcuts import get_current_site
+from django.core.mail import EmailMessage
+from django.shortcuts import redirect
+from django.template.loader import render_to_string
+from django.utils.encoding import force_bytes, force_str
+from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
 from rest_framework import status
+from rest_framework.generics import (CreateAPIView, DestroyAPIView,
+                                     ListAPIView, RetrieveAPIView,
+                                     UpdateAPIView)
 from rest_framework.permissions import AllowAny, IsAdminUser, IsAuthenticated
-from ..models import User
-from ..serializer.userSerializer import UserSerializer
+from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework_simplejwt.tokens import RefreshToken
-
-from django.contrib.sites.shortcuts import get_current_site
-from django.shortcuts import redirect
-from django.utils.encoding import force_bytes, force_str
-from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
-from django.template.loader import render_to_string
 from ruchy.utils import account_activation_token
-from django.core.mail import EmailMessage
+
+from ..models import User
+from ..serializer.userSerializer import UserSerializer
 
 
 class UserListAPI(ListAPIView):
+    """
+        User list endpoint
+        Role: Is admin user
+    """
     permission_classes = [IsAdminUser]
     queryset = User.objects.all()
     serializer_class = UserSerializer
     
 
 class UserAPI(RetrieveAPIView):
-    permission_classes = [IsAdminUser]
+    """
+        Retrieve a user endpoint
+        Role: Is Authenticated
+    """
+    permission_classes = [IsAuthenticated]
     queryset = User.objects.all()
     serializer_class = UserSerializer
     lookup_field = 'uuid'
     
 
 class UserCreateAPI(CreateAPIView):
+    """
+        User registration endpoint
+    """
     permission_classes = [AllowAny]
     queryset = User.objects.all()
     serializer_class = UserSerializer
@@ -59,6 +72,9 @@ class UserCreateAPI(CreateAPIView):
 
 
 class ActiveAccountAPI(APIView):
+    """
+        Account activation Endpoint
+    """
     
     permission_classes = [AllowAny]
     
@@ -71,6 +87,7 @@ class ActiveAccountAPI(APIView):
         
         if user is not None and account_activation_token.check_token(user, token):
             user.is_active = True
+            user.email_veridfied = True
             user.save()
             return redirect('/login')
         
@@ -78,7 +95,10 @@ class ActiveAccountAPI(APIView):
         
 
 class ForgotPasswordAPI(APIView):
-    
+    """
+        Forgot password endpoint
+        Role: Allow Any
+    """    
     permission_classes= [AllowAny]
     
     def post(self, request):
@@ -103,6 +123,10 @@ class ForgotPasswordAPI(APIView):
 
 
 class ResetPasswordAPI(APIView):
+    """
+        Reset Password API
+        Role: Allow Any
+    """
     permission_classes = [AllowAny]
     
     def post(self, request, uidb64, token, format=None):
@@ -122,6 +146,7 @@ class ResetPasswordAPI(APIView):
 class BlacklistAPI(APIView):
     """
         Blacklist user tokens
+        Role: Allow Any
     """
     permission_classes = [AllowAny]
     
@@ -138,6 +163,10 @@ class BlacklistAPI(APIView):
 
 
 class UserUpdateAPI(UpdateAPIView):
+    """
+        Update user endpoint
+        Role: Is Authenticated
+    """
     permission_classes = [IsAuthenticated]
     queryset = User.objects.all()
     serializer_class = UserSerializer
@@ -145,4 +174,10 @@ class UserUpdateAPI(UpdateAPIView):
 
 
 class UserDeleteAPI(DestroyAPIView):
-    pass
+    """
+        Delete user endpoint
+        Role: Is Admin user
+    """
+    permission_classes = [IsAdminUser]
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
