@@ -67,6 +67,11 @@
 .full-width{
     width: 100%;
 }
+.abs-bottom{
+    position: absolute;
+    left: 0;
+    bottom: 100px;
+}
 /* Flex container modifiers */
 .flex-row-start{
     display: flex;
@@ -184,6 +189,10 @@
     fill: var(--fun-blue);
     transition: all .2s ease-in;
 }
+.separator{
+    width: 100%;
+    padding: 55px 0px;
+}
 
 @media screen and (max-width: 960px) {
     .full-gutter{
@@ -192,5 +201,21 @@
     }
     .mobile{
         display: none;
+    }
+    .mobile-col-center{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .star-icon{
+        width: 100%;
+    }
+    .icon{
+        padding-left: 0;
+        padding-top: 13px;
+    }
+    .abs-bottom{
+        bottom: 50px;
     }
 }
