@@ -60,6 +60,12 @@
     grid-template-columns: 1fr 1fr; 
     gap: 0px 60px; 
 }
+.container-grid-2-side{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; 
+    gap: 0px 20px; 
+}
 .container-grid-4{
     width: 100%;
     display: grid;
@@ -123,6 +129,7 @@
 .mobile-separator{
     display: none;
 }
+
 @media screen and (max-width: 960px) {
     .medium-wrapper{
         width: 100% !important;

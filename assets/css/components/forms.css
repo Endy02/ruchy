@@ -22,6 +22,9 @@
     font-size: var(--medium-text);
     color: var(--dark-grey);
 }
+.finput-blue{
+    border: 2px solid var(--fun-blue);
+}
 .error-message{
     width: 70%;
     border-radius: 5px;

@@ -4,8 +4,13 @@ __pycache__/
 *$py.class
 /node_modules/
 /notebooks/
+/fixtures/
 /data/
 .data
+.assets/js/main.js
+.assets/js/main.js.LICENSE.txt
+/assets/js/main.js
+/assets/js/main.js.LICENSE.txt 
 
 # C extensions
 *.so

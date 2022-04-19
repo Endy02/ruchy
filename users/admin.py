@@ -12,9 +12,8 @@ class UserAdmin(UserAdmin):
     list_display = ('id', 'uuid', 'first_name', 'last_name', 'email', 'username', 'is_active', 'is_staff', 'is_superuser')
     ordering = ("-date_joined",)
     fieldsets = (
-        (None, {'fields': ('username', 'email', 'password')}),
-        ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser', 'groups')}),
-        ('Personal', {'fields': ('first_name', 'last_name', 'picture')})
+        ('Personal', {'fields': ('first_name', 'last_name','username', 'email', 'password', 'picture')}),
+        ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser', 'groups')})
     )
     formfield_overrides = {
         models.TextField : {'widget': Textarea(attrs={'rows': 20, 'cols' : 60})}
