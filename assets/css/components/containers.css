@@ -12,6 +12,11 @@
     width: 100%;
     height: calc(100vh - var(--header-height));
 }
+.container-m-h{
+    position: relative;
+    width: 100%;
+    min-height: calc(100vh - var(--header-height));
+}
 .container-plus{
     position: relative;
     width: 100%;
