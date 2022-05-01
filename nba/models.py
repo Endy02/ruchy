@@ -1,17 +1,22 @@
 import uuid
-from django.db import models
-from django.db.models.fields import IntegerField
 
+from django.db import models
+from users.models import User
 
 # Create your models here.
 
 class Season(models.Model):
     year = models.CharField(max_length=4)
     date = models.CharField(max_length=50)
-    uuid = models.UUIDField(default=uuid.uuid4, editable=False)    
+    uuid = models.UUIDField(default=uuid.uuid4, editable=False)
     
     def __str__(self):
         return self.date
+    
+    class Meta:
+        verbose_name = 'season'
+        verbose_name_plural = 'seasons'
+        
 
 class Team(models.Model):
     team_id = models.IntegerField(primary_key=True, unique=True)
@@ -78,6 +83,10 @@ class Team(models.Model):
     
     def __str__(self):
         return self.name
+    
+    class Meta:
+        verbose_name = 'team'
+        verbose_name_plural = 'teams'
 
     
 class Player(models.Model):
@@ -163,6 +172,10 @@ class Player(models.Model):
     def __str__(self):
         return self.name
     
+    class Meta:
+        verbose_name = 'player'
+        verbose_name_plural = 'players'
+    
     
 class Game(models.Model):
     game_id = models.IntegerField(primary_key=True, unique=True)
@@ -171,6 +184,7 @@ class Game(models.Model):
     est_date = models.DateField()
     season = models.ForeignKey(Season, on_delete=models.CASCADE, blank=True, null=True)
     home_team = models.ForeignKey(Team, related_name='home_team', on_delete=models.CASCADE)
+    home_team_name = models.CharField(max_length=200, null=True, blank=True)
     pts_home = models.FloatField(blank=True, null=True)
     fg_pct_home = models.FloatField(blank=True, null=True)
     ft_pct_home = models.FloatField(blank=True, null=True)
@@ -178,6 +192,7 @@ class Game(models.Model):
     ast_home = models.FloatField(blank=True, null=True)
     reb_home = models.FloatField(blank=True, null=True)
     away_team = models.ForeignKey(Team, related_name='away_team', on_delete=models.CASCADE)
+    away_team_name = models.CharField(max_length=200, null=True, blank=True)
     pts_away = models.FloatField(blank=True, null=True)
     fg_pct_away = models.FloatField(blank=True, null=True)
     ft_pct_away = models.FloatField(blank=True, null=True)
@@ -188,6 +203,10 @@ class Game(models.Model):
     
     def __str__(self) -> str:
         return self.home_team.name + " vs " + self.away_team.name
+    
+    class Meta:
+        verbose_name = 'game'
+        verbose_name_plural = 'games'
     
 
 class GameDetail(models.Model):
@@ -221,6 +240,10 @@ class GameDetail(models.Model):
     def __str__(self):
         return self.game.home_team.abbreviation + " vs " + self.game.away_team.abbreviation
     
+    class Meta:
+        verbose_name = 'game_detail'
+        verbose_name_plural = 'game_details'
+    
 class Ranking(models.Model):
     team = models.ForeignKey(Team, on_delete=models.CASCADE)
     season = models.ForeignKey(Season, on_delete=models.CASCADE)
@@ -236,3 +259,73 @@ class Ranking(models.Model):
     
     def __str__(self):
         return self.team.name
+    
+    class Meta:
+        verbose_name = 'ranking'
+        verbose_name_plural = 'rankings'
+
+
+class Prediction(models.Model):
+    game_id = models.IntegerField(primary_key=True, unique=True)
+    uuid = models.UUIDField(default=uuid.uuid4, editable=False)
+    game_status = models.CharField(max_length=200)
+    est_date = models.DateField()
+    season = models.ForeignKey(Season, on_delete=models.CASCADE, blank=True, null=True)
+    home_team = models.ForeignKey(Team, related_name='pred_home_team', on_delete=models.CASCADE)
+    home_team_name = models.CharField(max_length=200, null=True, blank=True)
+    pts_home = models.FloatField(blank=True, null=True)
+    fg_pct_home = models.FloatField(blank=True, null=True)
+    ft_pct_home = models.FloatField(blank=True, null=True)
+    fg3_pct_home = models.FloatField(blank=True, null=True)
+    ast_home = models.FloatField(blank=True, null=True)
+    reb_home = models.FloatField(blank=True, null=True)
+    away_team = models.ForeignKey(Team, related_name='pred_away_team', on_delete=models.CASCADE)
+    away_team_name = models.CharField(max_length=200, null=True, blank=True)
+    pts_away = models.FloatField(blank=True, null=True)
+    fg_pct_away = models.FloatField(blank=True, null=True)
+    ft_pct_away = models.FloatField(blank=True, null=True)
+    fg3_pct_away = models.FloatField(blank=True, null=True)
+    ast_away = models.FloatField(blank=True, null=True)
+    reb_away = models.FloatField(blank=True, null=True)
+    home_team_win = models.BooleanField(blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    
+    def __str__(self) -> str:
+        return self.home_team.name + " vs " + self.away_team.name
+    
+    class Meta:
+        verbose_name = 'prediction'
+        verbose_name_plural = 'predictions'
+        
+class Simulation(models.Model):
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+    game_id = models.IntegerField(primary_key=True, unique=True)
+    uuid = models.UUIDField(default=uuid.uuid4, editable=False)
+    game_status = models.CharField(max_length=200)
+    est_date = models.DateField()
+    season = models.ForeignKey(Season, on_delete=models.CASCADE, blank=True, null=True)
+    home_team = models.ForeignKey(Team, related_name='sim_home_team', on_delete=models.CASCADE)
+    home_team_name = models.CharField(max_length=200, null=True, blank=True)
+    pts_home = models.FloatField(blank=True, null=True)
+    fg_pct_home = models.FloatField(blank=True, null=True)
+    ft_pct_home = models.FloatField(blank=True, null=True)
+    fg3_pct_home = models.FloatField(blank=True, null=True)
+    ast_home = models.FloatField(blank=True, null=True)
+    reb_home = models.FloatField(blank=True, null=True)
+    away_team = models.ForeignKey(Team, related_name='sim_away_team', on_delete=models.CASCADE)
+    away_team_name = models.CharField(max_length=200, null=True, blank=True)
+    pts_away = models.FloatField(blank=True, null=True)
+    fg_pct_away = models.FloatField(blank=True, null=True)
+    ft_pct_away = models.FloatField(blank=True, null=True)
+    fg3_pct_away = models.FloatField(blank=True, null=True)
+    ast_away = models.FloatField(blank=True, null=True)
+    reb_away = models.FloatField(blank=True, null=True)
+    home_team_win = models.BooleanField(blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    
+    def __str__(self) -> str:
+        return self.home_team.name + " vs " + self.away_team.name
+    
+    class Meta:
+        verbose_name = 'simulation'
+        verbose_name_plural = 'simulations'

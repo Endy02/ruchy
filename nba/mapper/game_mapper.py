@@ -23,28 +23,54 @@ class GameMapper:
                         pass
                     else:
                         print(f"Games | id : {row[1]} | Year : {row[5]} | import : {round(counter / row_count * 100 ,2)} %", end='\r')
-                        if Game.objects.get(game_id__exact=row[1]):
-                            Game.objects.create(
-                                game_id = row[1],
-                                season = Season.objects.filter(year=row[5]).first(),
-                                game_status = row[2],
-                                est_date = datetime.strptime(row[0], '%Y-%m-%d'),
-                                home_team = Team.objects.filter(team_id=row[3]).first(),
-                                pts_home = row[7] if row[7] != '' else float(0),
-                                fg_pct_home = row[8] if row[8] != '' else float(0),
-                                ft_pct_home = row[9] if row[9] != '' else float(0),
-                                fg3_pct_home = row[10] if row[10] != '' else float(0),
-                                ast_home = row[11] if row[11] != '' else float(0),
-                                reb_home = row[12] if row[12] != '' else float(0),
-                                away_team = Team.objects.filter(team_id=row[4]).first(),
-                                pts_away = row[14] if row[14] != '' else float(0),
-                                fg_pct_away = row[15] if row[15] != '' else float(0),
-                                ft_pct_away = row[16] if row[16] != '' else float(0),
-                                fg3_pct_away = row[17] if row[17] != '' else float(0),
-                                ast_away = row[18] if row[18] != '' else float(0),
-                                reb_away = row[19] if row[19] != '' else float(0),
-                                home_team_win = row[20]
-                            )
+                        # if Game.objects.get(game_id__exact=row[1]):
+                        #     Game.objects.create(
+                        #         game_id = row[1],
+                        #         season = Season.objects.filter(year=row[5]).first(),
+                        #         game_status = row[2],
+                        #         est_date = datetime.strptime(row[0], '%Y-%m-%d'),
+                        #         home_team = Team.objects.filter(team_id=row[3]).first(),
+                        #         home_team_name = Team.objects.filter(team_id=row[3]).first().name,
+                        #         pts_home = row[7] if row[7] != '' else float(0),
+                        #         fg_pct_home = row[8] if row[8] != '' else float(0),
+                        #         ft_pct_home = row[9] if row[9] != '' else float(0),
+                        #         fg3_pct_home = row[10] if row[10] != '' else float(0),
+                        #         ast_home = row[11] if row[11] != '' else float(0),
+                        #         reb_home = row[12] if row[12] != '' else float(0),
+                        #         away_team = Team.objects.filter(team_id=row[4]).first(),
+                        #         pts_away = row[14] if row[14] != '' else float(0),
+                        #         fg_pct_away = row[15] if row[15] != '' else float(0),
+                        #         ft_pct_away = row[16] if row[16] != '' else float(0),
+                        #         fg3_pct_away = row[17] if row[17] != '' else float(0),
+                        #         ast_away = row[18] if row[18] != '' else float(0),
+                        #         reb_away = row[19] if row[19] != '' else float(0),
+                        #         home_team_win = row[20]
+                        #     )
+                        Game.objects.update_or_create(
+                            game_id = row[1],
+                            season = Season.objects.filter(year=row[5]).first(),
+                            defaults={
+                                "game_status" : row[2],
+                                "est_date" : datetime.strptime(row[0], '%Y-%m-%d'),
+                                "home_team" : Team.objects.filter(team_id=row[3]).first(),
+                                "home_team_name" : Team.objects.filter(team_id=row[3]).first().name,
+                                "pts_home" : row[7] if row[7] != '' else float(0),
+                                "fg_pct_home" : row[8] if row[8] != '' else float(0),
+                                "ft_pct_home" : row[9] if row[9] != '' else float(0),
+                                "fg3_pct_home" : row[10] if row[10] != '' else float(0),
+                                "ast_home" : row[11] if row[11] != '' else float(0),
+                                "reb_home" : row[12] if row[12] != '' else float(0),
+                                "away_team" : Team.objects.filter(team_id=row[4]).first(),
+                                "away_team_name" : Team.objects.filter(team_id=row[4]).first().name,
+                                "pts_away" : row[14] if row[14] != '' else float(0),
+                                "fg_pct_away" : row[15] if row[15] != '' else float(0),
+                                "ft_pct_away" : row[16] if row[16] != '' else float(0),
+                                "fg3_pct_away" : row[17] if row[17] != '' else float(0),
+                                "ast_away" : row[18] if row[18] != '' else float(0),
+                                "reb_away" : row[19] if row[19] != '' else float(0),
+                                "home_team_win" : row[20]
+                            }
+                        )
             return True
         except Exception as e:
             raise e
