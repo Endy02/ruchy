@@ -32,7 +32,7 @@
     "faker": "^6.6.6",
     "file-loader": "^6.2.0",
     "framer-motion": "^6.2.8",
-    "moment": "^2.29.1",
+    "moment": "^2.29.3",
     "path": "^0.12.7",
     "path-browserify": "^1.0.1",
     "react": "^17.0.2",
