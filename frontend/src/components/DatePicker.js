@@ -3,16 +3,28 @@ import moment from 'moment';
 
 const COLORS = ['picker-blue','picker-orange', 'picker-green', 'picker-sand']
 
-const DatePicker = ({color}) => {
+const DatePicker = ({color, handler}) => {
     const [startDate, setStartDate] = useState(moment(new Date()).format('YYYY-MM-DD'))
 
     const checkColor = COLORS.includes(color) ? color : COLORS[3]
 
+    useEffect(() => {
+        handler(startDate) ? handler : null
+    }, [])
+
     const nextDate = () => {
         setStartDate(moment(startDate).add(1,'days').format('YYYY-MM-DD'));
+        handleChange(moment(startDate).add(1,'days').format('YYYY-MM-DD'))
     }
+
     const prevDate = () => {
         setStartDate(moment(startDate).subtract(1, 'days').format('YYYY-MM-DD'));
+        handleChange(moment(startDate).subtract(1, 'days').format('YYYY-MM-DD'))
+    }
+
+    const handleChange = (date) => {
+        handler(date)
+        setStartDate(date)
     }
 
     return (
@@ -30,7 +42,7 @@ const DatePicker = ({color}) => {
                         </div>
                     </div>
                     <div>
-                        <input type='date' className={`picker ${checkColor}`} value={startDate} onChange={(e) => setStartDate(moment(e.target.valueAsDate).format('YYYY-MM-DD'))}/>
+                        <input type='date' className={`picker ${checkColor}`} value={startDate} onChange={(e) => handleChange(moment(e.target.valueAsDate).format('YYYY-MM-DD'))}/>
                     </div>
                     <div>
                         <div className={`date-icon ${checkColor}`} onClick={nextDate}>

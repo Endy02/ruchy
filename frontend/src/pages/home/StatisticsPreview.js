@@ -1,6 +1,7 @@
 import React from 'react'
 import Button from '../../components/Button'
 import Cards from '../../components/Cards'
+import moment from 'moment';
 
 const StatisticsPreview = () => {
   return (
@@ -16,7 +17,7 @@ const StatisticsPreview = () => {
                 <div className='card-cover'>
                   <div className='card-list pad-b-l'>
                     <div className='card-list-date'>
-                      <p className='medium-text bold-text'>Sunday February 20 2022</p>
+                    <p className='large-text black-text bold-text'>{moment(new Date()).format("dddd DD MMMM YYYY")}</p>
                     </div>
                     <Cards color="card-blue" team_1='chicago-bulls' team_2='boston-celtics' team_1_score="129" team_2_score='112' team_win='chicago-bulls' />
                     <Cards color="card-blue" team_1='new-york-knicks' team_2='los-angeles-lakers' team_1_score='106' team_2_score='114' team_win='los-angeles-lakers' />
