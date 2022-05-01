@@ -1,4 +1,4 @@
-import atlantaHawks from '../../../assets/images/teams/atlanta-hawks.svg'
+import atlantaHawks from '../../../assets/images/teams/atlanta-hawks.svg';
 import bostonCeltics from '../../../assets/images/teams/boston-celtics.svg';
 import brooklynNets from '../../../assets/images/teams/brooklyn-nets.svg';
 import charlotteHornets from '../../../assets/images/teams/charlotte-hornets.svg';
@@ -10,7 +10,7 @@ import detroitPiston from '../../../assets/images/teams/detroit-pistons.svg';
 import goldenState from '../../../assets/images/teams/golden-state-warriors.svg';
 import houstonRockets from '../../../assets/images/teams/houston-rockets.svg';
 import indianaPacers from '../../../assets/images/teams/indiana-pacers.svg';
-import losAngelesClippers from '../../../assets/images/teams/los-angeles-clippers.svg'
+import losAngelesClippers from '../../../assets/images/teams/la-clippers.svg';
 import losAngelesLakers from '../../../assets/images/teams/los-angeles-lakers.svg';
 import memphisGrizzlies from '../../../assets/images/teams/memphis-grizzlies.svg';
 import miamiHeat from '../../../assets/images/teams/miami-heat.svg';
@@ -23,11 +23,11 @@ import orlandoMagic from '../../../assets/images/teams/orlando-magic.svg';
 import philadelphia76ers from '../../../assets/images/teams/philadelphia-76ers.svg';
 import phoenixSuns from '../../../assets/images/teams/phoenix-suns.svg';
 import portlandTrailBlazers from '../../../assets/images/teams/portland-trail-blazers.svg';
-import sacramentoKings from '../../../assets/images/teams/sacramento-kings.svg'
+import sacramentoKings from '../../../assets/images/teams/sacramento-kings.svg';
 import sanAntonioSpurs from '../../../assets/images/teams/san-antonio-spurs.svg';
-import torontoRaptors from '../../../assets/images/teams/toronto-raptors.svg'
+import torontoRaptors from '../../../assets/images/teams/toronto-raptors.svg';
 import utahJazz from '../../../assets/images/teams/utah-jazz.svg';
-import washingtonWizards from '../../../assets/images/teams/washington-wizards.svg'
+import washingtonWizards from '../../../assets/images/teams/washington-wizards.svg';
 
 const Teams = [
     {
@@ -79,7 +79,7 @@ const Teams = [
         'url': indianaPacers
     },
     {
-        'name':'los-angeles-clippers',
+        'name':'la-clippers',
         'url': losAngelesClippers
     },
     {

@@ -37,7 +37,7 @@ const App = () => {
                     <Route exact path="/register" element={<Register />}/>
                     <Route exact path="/forgot-password" element={<ForgotPassword />}/>
                     <Route exact path="/statistics" element={<Statistics />} />
-                    <Route exact path="/statistic/:slug" element={<StatisticDetails />} />
+                    <Route exact path="/statistic/:uidb64" element={<StatisticDetails />} />
                     <Route exact path="/simulator" element={<Simulator />} />
                     <Route exact path="/predictions" element={<Predictions />} />
                     <Route exact path="/prediction/:slug" element={<PredictionsDetail />} />

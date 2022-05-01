@@ -9,7 +9,7 @@ urlpatterns = [
     path('simulator', views.index, name='simulator'),
     path('simulate/<int:id_t1>/<int:id_t2>', views.index, name='simulation'),
     path('statistics', views.index, name='statistics'),
-    path('statistics/<int:id>', views.index, name='statistic-details'),
+    path('statistic/<uidb64>', views.index, name='statistic-details'),
     path('team/<slug:slug>', views.index, name='team-details'),
     path('', views.index, name='home'),
     

@@ -11,7 +11,6 @@ const Activate = () => {
 
     useEffect(() => {
         try {
-            console.log(uidb64)
             axiosProvider.get(`user/activate/${uidb64}/${token}`).then((response) => {
                 if (response.status === 200) {
                     setActivate(true);
