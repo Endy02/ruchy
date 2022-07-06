@@ -2,18 +2,69 @@ import React, { useEffect, useState } from 'react'
 import Simulation from './Simulation'
 import GameSimulator from '../../components/GameSimulator'
 import RankCard from '../../components/RankCard'
+import axiosProvider from '../../core/axios';
+import { throws } from 'assert';
 
 const Simulator = () => {
     const [homeTeam, setHomeTeam] = useState({})
     const [awayTeam, setAwayTeam] = useState({})
-    const [status, setStatus] = useState(null)
-    const [loading, setLoading] = useState(true)
+    const [homeTeamWin, setHomeTeamWin] = useState(null)
+    const [error, setError] = useState({})
+    const [errMsg, setErrMsg] = useState("")
+    const [simulation, setSimulation] = useState(false)
+    const [data, setData] = useState({})
+    const [ranking, setRanking] = useState({})
 
-    const handleTeam = (homeTeam, awayTeam, status) => {
+    useEffect(async () => {
+        try {
+            const response = await axiosProvider.post(`game/ranking/`,{},{
+                xsrfHeaderName: 'X-CSRFTOKEN',
+                xsrfCookieName: 'csrftoken',
+            })
+                setRanking(response.data)
+        } catch (err) {
+            if (!err?.response) {
+                setErrMsg('No Server Response')
+            } else if (err.response?.status === 400) {
+                setErrMsg('Process not initialized');
+            } else if (err.response?.status === 401) {
+                setErrMsg('Unauthorized')
+            } else {
+                setErrMsg('Simulator failed')
+            }
+        }
+    }, [])
+
+    const handleTeam = async (homeTeam, awayTeam, errors) => {
+        try {
+            setSimulation(true)
+            const response = await axiosProvider.post(`game/simulate/`,{
+                "homeTeam": homeTeam.id,
+                "awayTeam": awayTeam.id
+            },{
+                xsrfHeaderName: 'X-CSRFTOKEN',
+                xsrfCookieName: 'csrftoken',
+            })
+                setData(response.data)
+                setSimulation(false)
+        } catch (err) {
+            if (!err?.response) {
+                setErrMsg('No Server Response')
+            } else if (err.response?.status === 400) {
+                setErrMsg('Process not initialized');
+            } else if (err.response?.status === 401) {
+                setErrMsg('Unauthorized')
+            } else {
+                setErrMsg('Simulator failed')
+            }
+        }
+        setError({})
         setHomeTeam(homeTeam)
         setAwayTeam(awayTeam)
-        setStatus(status)
-        setTimeout(() => setLoading(false), 6000)
+        if(errors.message){
+            setError(errors)   
+        }
+        setHomeTeamWin(true)
     }
 
     return (
@@ -42,7 +93,18 @@ const Simulator = () => {
                             </div>
                             <div className='grid-item flex-col-center'>
                                 <div className='container-content flex-col-center'>
-                                    {status ? <Simulation homeTeam={homeTeam} awayTeam={awayTeam} /> : (
+                                    {error.message ? 
+                                        <>
+                                            <h2 className='big-text black-text bold-text pad-b-m'>{error.message}</h2>
+                                            <div className='logo-big'>
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39.14 46.62">
+                                                    <g id="Calque_2" data-name="Calque 2">
+                                                        <path d="M36.41,37.25h0s-.12-.26-2.69-6.47L33,29a5.24,5.24,0,0,1,1.82-6.2,9.64,9.64,0,0,0,2.74-3.05A14.18,14.18,0,0,0,39.13,13a11.78,11.78,0,0,0-4.22-9.43Q30.7,0,23.09,0H6.58A6.59,6.59,0,0,0,0,6.58V31.24a6.78,6.78,0,1,0,13.55,0v-4h4.27q3.22,7.52,6.46,15s2.25,6.36,9.61,3.7C39.46,43.25,36.4,37.26,36.41,37.25ZM13.55,17.87V9.38H19.8q5.13,0,5.19,4.23a3.53,3.53,0,0,1-1.55,3.13,7,7,0,0,1-4.11,1.08Z" />
+                                                    </g>
+                                                </svg>
+                                            </div>
+                                        </>
+                                    : !error.message && homeTeamWin != null ? <Simulation data={data} homeTeam={homeTeam} awayTeam={awayTeam} homeTeamWin={homeTeamWin}/> : (
                                         <>
                                             <h2 className='big-text black-text bold-text pad-b-m'>Select your match up and click on the play button to run the simulation</h2>
                                             <div className='logo-big'>
@@ -68,29 +130,30 @@ const Simulator = () => {
                     <div className='full-gutter'>
                         <div className='container-grid-4'>
                             <div className='grid-item'>
-                                <RankCard title="Points" team="philadelphia-76ers" score="112" />
+                                <RankCard title="Points" team={ranking['points'] ? ranking['points'].team : null } score={ranking['points'] ? ranking['points'].score : null } />
                             </div>
                             <div className='grid-item'>
-                                <RankCard title="3 Points" team="golden-state-warriors" score="67" />
+                                <RankCard title="3 Points" team={ranking['three_points'] ? ranking['three_points'].team : null } score={ranking['three_points'] ? ranking['three_points'].score : null } />
                             </div>
                             <div className='grid-item'>
-                                <RankCard title="Rebonds" team="utah-jazz" score="34" />
+                                <RankCard title="Rebonds" team={ranking['rebonds'] ? ranking['rebonds'].team : null } score={ranking['rebonds'] ? ranking['rebonds'].score : null } />
                             </div>
                             <div className='grid-item'>
-                                <RankCard title="Assists" team="los-angeles-lakers" score="23" />
+                                <RankCard title="Assists" team={ranking['assists'] ? ranking['assists'].team : null } score={ranking['assists'] ? ranking['assists'].score : null } />
                             </div>
                             <div className='grid-item'>
-                                <RankCard title="Free Throws" team="phoenix-suns" score="150" />
+                                <RankCard title="Free Throws" team={ranking['free_throws'] ? ranking['free_throws'].team : null } score={ranking['free_throws'] ? ranking['free_throws'].score : null } />
                             </div>
                             <div className='grid-item'>
-                                <RankCard title="Steals" team="portland-trail-blazers" score="48" />
+                                <RankCard title="Steals" team={ranking['steals'] ? ranking['steals'].team : null } score={ranking['steals'] ? ranking['steals'].score : null } />
                             </div>
                             <div className='grid-item'>
-                                <RankCard title="Blocks" team="brooklyn-nets" score="21" />
+                                <RankCard title="Blocks" team={ranking['blocks'] ? ranking['blocks'].team : null } score={ranking['blocks'] ? ranking['blocks'].score : null } />
                             </div>
                             <div className='grid-item'>
-                                <RankCard title="Turnover" team="detroit-pistons" score="73" />
+                                <RankCard title="Turnover" team={ranking['turnover'] ? ranking['turnover'].team : null } score={ranking['turnover'] ? ranking['turnover'].score : null } />
                             </div>
+                            
                         </div>
                     </div>
                 </div>

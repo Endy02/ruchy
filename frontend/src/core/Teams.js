@@ -32,123 +32,153 @@ import washingtonWizards from '../../../assets/images/teams/washington-wizards.s
 const Teams = [
     {
         'name':'atlanta-hawks',
-        'url': atlantaHawks
+        'url': atlantaHawks,
+        'id': 1610612737
     },
     {
         'name':'boston-celtics',
-        'url': bostonCeltics
+        'url': bostonCeltics,
+        'id': 1610612738	
     },
     {
         'name':'brooklyn-nets',
-        'url': brooklynNets
+        'url': brooklynNets,
+        'id': 1610612751
     },
     {
         'name':'charlotte-hornets',
-        'url': charlotteHornets
+        'url': charlotteHornets,
+        'id': 1610612766
     },
     {
         'name':'chicago-bulls',
-        'url': chicagoBulls
+        'url': chicagoBulls,
+        'id': 1610612741
     },
     {
         'name':'cleveland-cavaliers',
-        'url': clevelandCavaliers
+        'url': clevelandCavaliers,
+        'id': 1610612739
     },
     {
         'name':'dallas-mavericks',
-        'url': dallasMavericks
+        'url': dallasMavericks,
+        'id': 1610612742
     },
     {
         'name':'denver-nuggets',
-        'url': denverNuggets
+        'url': denverNuggets,
+        'id': 1610612743
     },
     {
         'name':'detroit-pistons',
-        'url': detroitPiston
+        'url': detroitPiston,
+        'id': 1610612765
     },
     {
         'name':'golden-state-warriors',
-        'url': goldenState
+        'url': goldenState,
+        'id': 1610612744
     },
     {
         'name':'houston-rockets',
-        'url': houstonRockets
+        'url': houstonRockets,
+        'id': 1610612745
     },
     {
         'name':'indiana-pacers',
-        'url': indianaPacers
+        'url': indianaPacers,
+        'id': 1610612754
     },
     {
         'name':'la-clippers',
-        'url': losAngelesClippers
+        'url': losAngelesClippers,
+        'id': 1610612746
     },
     {
         'name': 'los-angeles-lakers',
-        'url': losAngelesLakers
+        'url': losAngelesLakers,
+        'id': 1610612747
     },
     {
         'name':'memphis-grizzlies',
-        'url': memphisGrizzlies
+        'url': memphisGrizzlies,
+        'id': 1610612763
     },
     {
         'name':'miami-heat',
-        'url': miamiHeat
+        'url': miamiHeat,
+        'id': 1610612748
     },
     {
         'name':'milwaukee-bucks',
-        'url': milwaukeeBucks
+        'url': milwaukeeBucks,
+        'id': 1610612749
     },
     {
         'name':'minnesota-timberwolves',
-        'url': minnesotaTimberwolves
+        'url': minnesotaTimberwolves,
+        'id': 1610612750
     },
     {
         'name':'new-orleans-pelicans',
-        'url': newOrleansPelicans
+        'url': newOrleansPelicans,
+        'id': 1610612740
     },
     {
         'name':'new-york-knicks',
-        'url': newYorkKnicks
+        'url': newYorkKnicks,
+        'id': 1610612752
     },
     {
         'name':'oklahoma-city-thunder',
-        'url': oklahomaCityThunder
+        'url': oklahomaCityThunder,
+        'id': 1610612760
     },
     {
         'name':'orlando-magic',
-        'url': orlandoMagic
+        'url': orlandoMagic,
+        'id': 1610612753
     },
     {
         'name':'philadelphia-76ers',
-        'url': philadelphia76ers
+        'url': philadelphia76ers,
+        'id': 1610612755
     },
     {
         'name':'phoenix-suns',
-        'url': phoenixSuns
+        'url': phoenixSuns,
+        'id': 1610612756
     },
     {
         'name':'portland-trail-blazers',
-        'url': portlandTrailBlazers
+        'url': portlandTrailBlazers,
+        'id': 1610612757
     },
     {
         'name':'sacramento-kings',
-        'url': sacramentoKings
+        'url': sacramentoKings,
+        'id': 1610612758
     },
     {
         'name':'san-antonio-spurs',
-        'url': sanAntonioSpurs
+        'url': sanAntonioSpurs,
+        'id': 1610612759
     },
     {
         'name':'toronto-raptors',
-        'url': torontoRaptors
+        'url': torontoRaptors,
+        'id': 1610612761
     },
     {
         'name':'utah-jazz',
-        'url': utahJazz
+        'url': utahJazz,
+        'id': 1610612762
     },
     {
         'name':'washington-wizard',
-        'url': washingtonWizards
+        'url': washingtonWizards,
+        'id': 1610612764
     },
 ]
 
