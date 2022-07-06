@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import axiosProvider from '../../core/axios';
 import TeamPrev from './TeamPrev'
-import Button from '../../components/Button'
 import FuCard from '../../components/FuCard'
 
 

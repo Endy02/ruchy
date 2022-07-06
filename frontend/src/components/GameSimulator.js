@@ -7,9 +7,9 @@ const GameSimulator = ({teams}) => {
     const [homeTeam, setHomeTeam] = useState({})
     const [awayTeam, setAwayteam] = useState({})
     const [errors, setErrors] = useState({})
+    const [data, setData] = useState({})
     const HomeDefault = "/assets/images/teams/chicago-bulls.svg"
     const AwayDefault = "/assets/images/teams/boston-celtics.svg"
-    const status = 1
 
     const openModal = (identifier) => {
         setIsOpen(true)
@@ -43,7 +43,7 @@ const GameSimulator = ({teams}) => {
                 'message': 'You cannot select the same team match up'
             })
         }else if(homeTeam && awayTeam){
-            
+            setErrors({})
         }
     }
 
@@ -104,7 +104,7 @@ const GameSimulator = ({teams}) => {
                         <img src={Object.keys(awayTeam).length === 0 ? AwayDefault : awayTeam.url} className="sim-selector-img"/>
                     </div>
                 </div>
-                <div className='play-btn' onClick={() => teams(homeTeam, awayTeam, status)}>
+                <div className='play-btn' onClick={() => teams(homeTeam, awayTeam, errors)}>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122 122">
                         <defs>
                             <filter id="play_icon" x="41" y="20" filterUnits="userSpaceOnUse">

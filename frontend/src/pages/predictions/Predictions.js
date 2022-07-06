@@ -1,9 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 import DatePicker from '../../components/DatePicker'
 import Cards from '../../components/Cards'
 import FuCharts from '../../components/FuCharts'
+import axiosProvider from '../../core/axios';
 
 const Predictions = () => {
+    const [request, setRequest] = useState(false)
+    const [games, setGames] = useState(null)
+
+    const handleDate = (date) => {
+        axiosProvider.get(`games?est_date=${date}`).then((response) => {
+            if (response.status === 200) {
+                setRequest(true);
+                setGames(response.data)
+            } else {
+                setRequest(false)
+            }
+        })
+    }
+
     return (
         <>
             <div className='container'>
@@ -39,7 +54,7 @@ const Predictions = () => {
                             </div>
                             <div className='grid-item flex-col-center grid-first'>
                                 <div className='stats-date'>
-                                    <DatePicker color="picker-sand"/>
+                                    <DatePicker color="picker-sand" handler={handleDate} />
                                 </div>
                                 <div className='today-details pad-t-m'>
                                     <div className='stats-info'>

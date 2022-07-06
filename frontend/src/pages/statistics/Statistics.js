@@ -1,17 +1,16 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import DatePicker from '../../components/DatePicker'
 import Cards from '../../components/Cards'
 import TeamPrev from './TeamPrev'
 import axiosProvider from '../../core/axios';
-import moment from 'moment';
 
 const Statistics = () => {
     const [request, setRequest] = useState(false)
-    const [date, setDate] = useState(moment(new Date()).format("YYYY-MM-DD"))
     const [games, setGames] = useState(null)
 
-    useEffect(() => {
-        axiosProvider.get(`games/`).then((response) => {
+
+    const handleDate = (date) => {
+        axiosProvider.get(`games?est_date=${date}`).then((response) => {
             if (response.status === 200) {
                 setRequest(true);
                 setGames(response.data)
@@ -19,10 +18,6 @@ const Statistics = () => {
                 setRequest(false)
             }
         })
-    }, [])
-
-    const handleDate = (date) => {
-        setDate(date)
     }
 
     return (
@@ -55,18 +50,22 @@ const Statistics = () => {
                                 <div className='container-content flex-col-center'>
                                     <div className='card-cover'>
                                         <div className='card-list'>
-                                            {games ? games.filter(games => moment(games.est_date).format('YYYY-MM-DD') == date).map((filterdGames, i) => {
+                                            {games ? games.length > 0 ? games.map((filterdGames, i) => {
                                                 var homeTeam = filterdGames.home_team_name.toLowerCase().replaceAll(" ", "-")
                                                 var awayTeam = filterdGames.away_team_name.toLowerCase().replaceAll(" ", "-")
                                                 var winner = filterdGames.home_team_win ? homeTeam : awayTeam
                                                 return (
-                                                    <>
+                                                    <div className="full-width" key={i}>
                                                         <Cards team_1={homeTeam} team_2={awayTeam} team_1_score={filterdGames.pts_home} team_2_score={filterdGames.pts_away} team_win={winner} link={'/statistic/' + filterdGames.uuid} />
-                                                    </>
+                                                    </div>
                                                 )
                                             }) :
                                                 <>
-                                                    <h2 className='big-text bold-text black-text'>No game found</h2>
+                                                    <h1 className='large-text bold-text black-text'>No games this day</h1>
+                                                </>
+                                                :
+                                                <>
+                                                    <h1 className='large-text bold-text black-text'>Game fetching ...</h1>
                                                 </>
                                             }
                                         </div>

@@ -31,7 +31,7 @@ const PredictionsPreview = () => {
                         </div>
                       </div>
                       <div className='fu-card-content'>
-                        <p className='large-text bold-text pad-l-m'>85 %</p>
+                        <p className='large-text bold-text'>85 %</p>
                       </div>
                     </div>
                     <div className='fu-card-right'>
@@ -41,7 +41,7 @@ const PredictionsPreview = () => {
                         </div>
                       </div>
                       <div className='fu-card-content'>
-                        <p className='large-text bold-text pad-r-m'>15 %</p>
+                        <p className='large-text bold-text'>15 %</p>
                       </div>
                     </div>
                   </div>
@@ -96,7 +96,7 @@ const PredictionsPreview = () => {
                     </table>
                   </div>
                 </div>
-                <Button buttonSize="btn-large" mode="btn-regular" buttonStyle='btn-sand' link='/statistics'>See more</Button>
+                <Button buttonSize="btn-large" mode="btn-regular" buttonStyle='btn-sand' link='/predictions'>See more</Button>
               </div>
             </div>
             <div className='grid-item flex-col-center mobile'>

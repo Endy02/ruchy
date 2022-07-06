@@ -9,7 +9,7 @@ const DatePicker = ({color, handler}) => {
     const checkColor = COLORS.includes(color) ? color : COLORS[3]
 
     useEffect(() => {
-        handler(startDate) ? handler : null
+        handler(startDate) ? handler(startDate) : null
     }, [])
 
     const nextDate = () => {
