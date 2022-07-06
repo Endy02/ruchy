@@ -5,14 +5,17 @@ from ..models import Player, Season, Team
 
 class PlayerMapper:
     def __init__(self):
-        self.teams = os.path.dirname(os.path.abspath("data")) + "/data/players.csv"
+        self.players = os.path.dirname(os.path.abspath("data")) + "/data/players.csv"
         self.date = datetime.today()
         
     def import_player(self):
         try:
-            with open(self.teams) as f :
+            row_count = len(list(open(self.players)))
+            with open(self.players) as f :
                 file = csv.reader(f)
+                counter = 0
                 for row in file:
+                    print(f"Players1610612740 | PLayer : {row[2]} | import : {round(counter / row_count * 100 ,2)} %", end='\r')
                     if row[1] == "PLAYER_ID":
                         pass
                     else:
@@ -90,8 +93,8 @@ class PlayerMapper:
                                 "cfid" : row[65],
                                 "cfparams" : row[66],
                                 "height" : row[67],
-                                "height_inches" : row[68] if row[68] != '' else None,
-                                "weight" : row[69] if row[69] != '' else None,
+                                "height_inches" : row[68].replace(',','.') if row[68] != '' else None,
+                                "weight" : row[69].replace('-','.').replace(',','.') if row[69] != '' else None,
                                 "college" : row[70],
                                 "country" : row[71],
                                 "draft_year" : row[72],

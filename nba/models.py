@@ -126,7 +126,7 @@ class Player(models.Model):
     nba_fantasy_pts = models.FloatField()
     dd2 = models.IntegerField()
     td3 = models.IntegerField()
-    gp_rank = models.IntegerField()
+    gp_rank = models.FloatField()
     win_rank = models.IntegerField()
     loss_rank = models.IntegerField()
     win_pct_rank = models.IntegerField()
@@ -200,6 +200,7 @@ class Game(models.Model):
     ast_away = models.FloatField(blank=True, null=True)
     reb_away = models.FloatField(blank=True, null=True)
     home_team_win = models.BooleanField(blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
     
     def __str__(self) -> str:
         return self.home_team.name + " vs " + self.away_team.name
@@ -243,26 +244,6 @@ class GameDetail(models.Model):
     class Meta:
         verbose_name = 'game_detail'
         verbose_name_plural = 'game_details'
-    
-class Ranking(models.Model):
-    team = models.ForeignKey(Team, on_delete=models.CASCADE)
-    season = models.ForeignKey(Season, on_delete=models.CASCADE)
-    standings_date = models.DateTimeField()
-    games = models.IntegerField(blank=True, null=True)
-    wins = models.IntegerField(blank=True, null=True)
-    losses = models.IntegerField(blank=True, null=True)
-    wins_pct = models.FloatField(blank=True, null=True)
-    home_record = models.CharField(max_length=50, blank=True, null=True)
-    road_record = models.CharField(max_length=50, blank=True, null=True)
-    return_play = models.FloatField(blank=True, null=True)
-    uuid = models.UUIDField(default=uuid.uuid4, editable=False)
-    
-    def __str__(self):
-        return self.team.name
-    
-    class Meta:
-        verbose_name = 'ranking'
-        verbose_name_plural = 'rankings'
 
 
 class Prediction(models.Model):
