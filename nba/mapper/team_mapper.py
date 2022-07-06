@@ -12,9 +12,12 @@ class TeamMapper:
         
     def import_team(self):
         try:
+            row_count = len(list(open(self.teams)))
             with open(self.teams) as f :
                 file = csv.reader(f)
+                counter = 0
                 for row in file:
+                    print(f"Teams | Id : {row[1]} | Name : {row[2]} | import : {round(counter / row_count * 100 ,2)} %", end='\r')
                     if row[1] == "TEAM_ID":
                         pass
                     else:

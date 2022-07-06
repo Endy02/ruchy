@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Season, Team, Game, GameDetail, Player, Ranking, Simulation, Prediction
+from .models import Season, Team, Game, GameDetail, Player, Simulation, Prediction
 
 # Register your models here.
 
@@ -23,7 +23,7 @@ class TeamAdmin(admin.ModelAdmin):
 class GameAdmin(admin.ModelAdmin):
     search_fields = ('est_date', 'season')
     list_filter = ('est_date', 'season')
-    list_display = ('game_id', 'est_date', 'game_status', 'season', 'home_team', 'home_team_name', 'pts_home', 'fg_pct_home', 'ft_pct_home', 'fg3_pct_home', 'ast_home', 'reb_home', 'away_team', 'away_team_name', 'pts_away', 'fg_pct_away', 'ft_pct_away', 'fg3_pct_away', 'ast_away', 'reb_away', 'home_team_win')
+    list_display = ('game_id', 'est_date', 'game_status', 'season', 'home_team', 'home_team_name', 'pts_home', 'fg_pct_home', 'ft_pct_home', 'fg3_pct_home', 'ast_home', 'reb_home', 'away_team', 'away_team_name', 'pts_away', 'fg_pct_away', 'ft_pct_away', 'fg3_pct_away', 'ast_away', 'reb_away', 'home_team_win', 'created_at')
     ordering = ('-est_date',)
 
 
@@ -57,10 +57,3 @@ class PlayerAdmin(admin.ModelAdmin):
     list_display = ('name', 'team', 'season', 'age', 'height', 'weight', 'reb', 'ast', 'tov', 'stl', 'blk', 'pts', 'plus_minus', 'updated_at')
     ordering = ('-age',)
     
-
-@admin.register(Ranking)
-class RankingAdmin(admin.ModelAdmin):
-    search_fields = ('team', 'season', 'road_record')
-    list_filter = ('team', 'season', 'road_record')
-    list_display = ('team', 'season', 'standings_date', 'games', 'wins', 'losses', 'wins_pct', 'home_record', 'road_record', 'return_play')
-    ordering = ('-standings_date',)
